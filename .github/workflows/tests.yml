@@ -1,0 +1,42 @@
+name: TaxSarthi CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-suite:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      
+      - name: Install TaxSarthi Package
+        run: |
+          pip install -e .
+      
+      - name: Run Golden Test Suite (51 Cases)
+        run: python3 skills/taxsarthi/scripts/test_tax_engine.py
+      
+      - name: Run Input Validator Test Suite (104 Cases)
+        run: python3 skills/taxsarthi/scripts/test_validate_income.py
+      
+      - name: Run Extraction Tooling Test Suite (50 Cases)
+        run: python3 skills/taxsarthi/scripts/test_extraction.py
+      
+      - name: Run Deterministic Property Fuzzer (3,000 Cases)
+        run: python3 -m taxsarthi.cli.main fuzz --cases 3000 --seed 42
+      
+      - name: Validate Example Income JSON & Tax Sarthi CLI
+        run: |
+          taxsarthi validate skills/taxsarthi/assets/example-income.json
+          taxsarthi compute skills/taxsarthi/assets/example-income.json > /dev/null
+          taxsarthi selftest
