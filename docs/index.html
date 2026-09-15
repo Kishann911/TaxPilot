@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TaxSarthi · Deterministic Indian Income Tax Return (ITR) Engine & AI Co-Pilot</title>
+  <title>TaxSarthi · Enterprise Indian Income Tax Return (ITR) Engine & AI Co-Pilot</title>
   <meta name="description" content="TaxSarthi - Professional, deterministic Indian Income Tax computation engine & AI filing co-pilot for AY 2026-27 (FY 2025-26). Zero LLM arithmetic, 205+ verified statutory tests, and complete PII redaction.">
-  <meta name="keywords" content="TaxSarthi, Indian Income Tax, ITR Filing, AY 2026-27, FY 2025-26, Tax Calculator India, Form 16, AIS JSON, 87A Rebate, Old vs New Regime">
+  <meta name="keywords" content="TaxSarthi, Indian Income Tax, ITR Filing, AY 2026-27, FY 2025-26, Tax Calculator India, Form 16, AIS JSON, 87A Rebate, Old vs New Regime, 112A Capital Gains, Section 234A 234B 234C">
   <meta name="author" content="TaxSarthi Contributors">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
@@ -30,7 +30,7 @@
 
   <!-- Announcement Bar -->
   <div class="top-bar">
-    <span>🛡️ Pinned to <strong>AY 2026-27 (FY 2025-26)</strong> · Section 87A Marginal Relief &amp; 112A Capital Gains Rules Verified</span>
+    <span>🛡️ Pinned to <strong>AY 2026-27 (FY 2025-26)</strong> · Section 87A Marginal Relief, 112A Capital Gains, 234A/B/C Interest &amp; Surcharge Caps Verified</span>
   </div>
 
   <!-- Main Navigation Header -->
@@ -42,9 +42,12 @@
 
       <ul class="nav-links">
         <li><a href="#studio" class="nav-item">Tax Studio</a></li>
-        <li><a href="#redactor" class="nav-item">Privacy Redactor</a></li>
+        <li><a href="#sft-intelligence" class="nav-item">SFT Directory</a></li>
+        <li><a href="#matrix" class="nav-item">Deductions Matrix</a></li>
+        <li><a href="#golden-tests" class="nav-item">Golden Tests</a></li>
+        <li><a href="#redactor" class="nav-item">Privacy Shield</a></li>
+        <li><a href="#audit-checklist" class="nav-item">Audit Checklist</a></li>
         <li><a href="#wizard" class="nav-item">Form Selector</a></li>
-        <li><a href="#portal" class="nav-item">Portal Guide</a></li>
         <li><a href="#cli" class="nav-item">CLI &amp; Agents</a></li>
       </ul>
 
@@ -66,7 +69,7 @@
         <div>
           <div class="hero-pill">
             <span class="dot-live"></span>
-            Deterministic Math Engine · AY 2026-27
+            Deterministic Computation Core · AY 2026-27
           </div>
 
           <h1 class="hero-heading">
@@ -74,7 +77,7 @@
           </h1>
 
           <p class="hero-desc">
-            TaxSarthi decouples AI document understanding from tax calculations. AI transcribes your Form 16 and AIS JSON, while a <strong>pure, tested Python calculation engine</strong> computes every rupee of slab tax, rebate, surcharge, and interest.
+            TaxSarthi decouples AI document extraction from tax arithmetic. AI models transcribe Form 16 and AIS JSON into structured schemas, while a <strong>deterministic, test-proven Python engine</strong> computes every rupee of slab tax, rebate, surcharge, and statutory interest.
           </p>
 
           <div class="hero-actions">
@@ -102,7 +105,7 @@
               <span class="win-dot green"></span>
             </div>
             <div class="terminal-title-text">taxsarthi-engine — AY 2026-27</div>
-            <div style="font-size: 0.72rem; color: #10b981; font-weight: 600;">● TESTED</div>
+            <div style="font-size: 0.72rem; color: #3fb950; font-weight: 600;">● TESTED</div>
           </div>
           <div class="terminal-content">
             <p><span class="t-prompt">taxsarthi@box:~$</span> <span class="t-cmd">taxsarthi compute income.json</span></p>
@@ -123,36 +126,36 @@
         </div>
       </div>
 
-      <!-- Metrics & Invariants Strip -->
+      <!-- Metrics Strip -->
       <div class="container">
         <div class="metrics-strip">
           <div class="metric-box">
-            <div class="metric-val">51 <span class="suffix">tests</span></div>
-            <div class="metric-name">Hand-Derived Golden Cases</div>
+            <div class="metric-val">205+ <span class="suffix">tests</span></div>
+            <div class="metric-name">Hand-Derived Statutory Cases</div>
           </div>
           <div class="metric-box">
             <div class="metric-val">104 <span class="suffix">rules</span></div>
             <div class="metric-name">Schema &amp; PII Guard Gates</div>
           </div>
           <div class="metric-box">
-            <div class="metric-val">50 <span class="suffix">checks</span></div>
-            <div class="metric-name">AIS &amp; 26AS Extraction Tests</div>
+            <div class="metric-val">18 <span class="suffix">codes</span></div>
+            <div class="metric-name">AIS SFT &amp; TDS Intelligence</div>
           </div>
           <div class="metric-box">
-            <div class="metric-val">350K+ <span class="suffix">runs</span></div>
+            <div class="metric-val">3,000+ <span class="suffix">runs</span></div>
             <div class="metric-name">Fuzzed Statutory Invariants</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Tax Studio (Centerpiece) -->
+    <!-- Interactive Tax Studio -->
     <section id="studio">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Interactive Studio</span>
           <h2 class="section-title">Live Tax Computation &amp; Regime Comparator</h2>
-          <p class="section-desc">Test real-world financial scenarios across Old and New tax regimes with instant statutory feedback.</p>
+          <p class="section-desc">Test real-world scenarios across Old vs New tax regimes with instant statutory breakdown, 234A/B/C interest, and refund diagnostics.</p>
         </div>
 
         <div class="studio-card">
@@ -171,14 +174,15 @@
                 <button class="nav-segment active" data-target="pane-salary">Salary &amp; Income</button>
                 <button class="nav-segment" data-target="pane-gains">Capital Gains</button>
                 <button class="nav-segment" data-target="pane-deductions">Deductions</button>
-                <button class="nav-segment" data-target="pane-taxes">Taxes Paid</button>
+                <button class="nav-segment" data-target="pane-advtax">Advance Tax</button>
+                <button class="nav-segment" data-target="pane-slabs">Slab Ledger</button>
               </div>
 
               <!-- Tab 1: Salary & Income -->
               <div id="pane-salary" class="tab-content-pane">
                 <div class="input-group">
                   <div class="input-label">
-                    <span>Gross Salary (Form 16)</span>
+                    <span>Gross Salary (Form 16 Part B)</span>
                     <span class="note">Std. Ded. ₹75k (New) / ₹50k (Old)</span>
                   </div>
                   <div class="input-wrapper">
@@ -190,8 +194,32 @@
                 <div class="input-row">
                   <div class="input-group">
                     <div class="input-label">
-                      <span>HRA Exemption</span>
-                      <span class="note">Old regime only</span>
+                      <span>Exempt Allowances</span>
+                      <span class="note">Old regime only (s.10)</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-exempt-allowances" class="input-field" value="240000">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Professional Tax</span>
+                      <span class="note">Section 16(iii)</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-pt" class="input-field" value="2400">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>HRA Exemption Claimed</span>
+                      <span class="note">Old regime only (s.10(13A))</span>
                     </div>
                     <div class="input-wrapper">
                       <span class="currency-prefix">₹</span>
@@ -201,7 +229,7 @@
 
                   <div class="input-group">
                     <div class="input-label">
-                      <span>Freelance Receipts (44ADA)</span>
+                      <span>Freelance Gross (44ADA)</span>
                       <span class="note">50% deemed taxable</span>
                     </div>
                     <div class="input-wrapper">
@@ -211,14 +239,52 @@
                   </div>
                 </div>
 
-                <div class="input-group">
-                  <div class="input-label">
-                    <span>Interest &amp; Other Sources</span>
-                    <span class="note">Savings + FD + Dividends</span>
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Savings Bank Interest</span>
+                      <span class="note">80TTA eligible</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-savings-interest" class="input-field" value="14500">
+                    </div>
                   </div>
-                  <div class="input-wrapper">
-                    <span class="currency-prefix">₹</span>
-                    <input type="number" id="inp-interest" class="input-field" value="76700">
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>FD / Term Deposit Interest</span>
+                      <span class="note">Taxed at slab rates</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-fd-interest" class="input-field" value="42000">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Dividends Received</span>
+                      <span class="note">Surcharge capped @ 15%</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-dividends" class="input-field" value="8200">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Age Category</span>
+                      <span class="note">Affects Old basic exemption</span>
+                    </div>
+                    <select id="inp-age" class="input-field">
+                      <option value="regular" selected>Regular (&lt;60 yrs) — Basic Exemption ₹2.5L</option>
+                      <option value="senior">Senior (60-79 yrs) — Basic Exemption ₹3.0L</option>
+                      <option value="super_senior">Super Senior (80+ yrs) — Basic Exemption ₹5.0L</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -228,8 +294,8 @@
                 <div class="input-row">
                   <div class="input-group">
                     <div class="input-label">
-                      <span>Equity STCG (111A)</span>
-                      <span class="note">Flat 20%</span>
+                      <span>Equity STCG (u/s 111A)</span>
+                      <span class="note">Taxed @ 20%</span>
                     </div>
                     <div class="input-wrapper">
                       <span class="currency-prefix">₹</span>
@@ -239,7 +305,7 @@
 
                   <div class="input-group">
                     <div class="input-label">
-                      <span>Equity LTCG (112A)</span>
+                      <span>Equity LTCG (u/s 112A)</span>
                       <span class="note">12.5% above ₹1.25L</span>
                     </div>
                     <div class="input-wrapper">
@@ -249,14 +315,27 @@
                   </div>
                 </div>
 
-                <div class="input-group">
-                  <div class="input-label">
-                    <span>VDA / Crypto Gains</span>
-                    <span class="note">Flat 30% (no loss set-off)</span>
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Normal STCG (Debt / Unlisted)</span>
+                      <span class="note">Taxed at normal slab rates</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-stcg-slab" class="input-field" value="12000">
+                    </div>
                   </div>
-                  <div class="input-wrapper">
-                    <span class="currency-prefix">₹</span>
-                    <input type="number" id="inp-crypto" class="input-field" value="0">
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>VDA / Crypto Gains</span>
+                      <span class="note">Flat 30% (no set-off)</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-crypto" class="input-field" value="0">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -277,12 +356,12 @@
 
                   <div class="input-group">
                     <div class="input-label">
-                      <span>Section 80D</span>
-                      <span class="note">Mediclaim (Self + Parents)</span>
+                      <span>80CCD(1B) Self NPS</span>
+                      <span class="note">Additional ₹50,000</span>
                     </div>
                     <div class="input-wrapper">
                       <span class="currency-prefix">₹</span>
-                      <input type="number" id="inp-80d" class="input-field" value="25000">
+                      <input type="number" id="inp-nps" class="input-field" value="50000">
                     </div>
                   </div>
                 </div>
@@ -290,12 +369,12 @@
                 <div class="input-row">
                   <div class="input-group">
                     <div class="input-label">
-                      <span>80CCD(1B) NPS</span>
-                      <span class="note">Additional ₹50k</span>
+                      <span>80CCD(2) Employer NPS</span>
+                      <span class="note">Allowed in BOTH regimes</span>
                     </div>
                     <div class="input-wrapper">
                       <span class="currency-prefix">₹</span>
-                      <input type="number" id="inp-nps" class="input-field" value="50000">
+                      <input type="number" id="inp-employer-nps" class="input-field" value="100000">
                     </div>
                   </div>
 
@@ -310,34 +389,174 @@
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Tab 4: Taxes Paid -->
-              <div id="pane-taxes" class="tab-content-pane" style="display: none;">
                 <div class="input-row">
                   <div class="input-group">
                     <div class="input-label">
-                      <span>TDS Claimed</span>
-                      <span class="note">Form 16 + 26AS Total</span>
+                      <span>80D Mediclaim (Self &amp; Family)</span>
+                      <span class="note">Max ₹25k / ₹50k senior</span>
                     </div>
                     <div class="input-wrapper">
                       <span class="currency-prefix">₹</span>
-                      <input type="number" id="inp-tds" class="input-field" value="280000">
+                      <input type="number" id="inp-80d-self" class="input-field" value="25000">
                     </div>
                   </div>
 
                   <div class="input-group">
                     <div class="input-label">
-                      <span>Advance Tax / Self Assessment</span>
-                      <span class="note">Paid via challans</span>
+                      <span>80D Mediclaim (Parents)</span>
+                      <span class="note">Max ₹50k for senior parents</span>
                     </div>
                     <div class="input-wrapper">
                       <span class="currency-prefix">₹</span>
-                      <input type="number" id="inp-advtax" class="input-field" value="20000">
+                      <input type="number" id="inp-80d-parents" class="input-field" value="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>80E Education Loan Interest</span>
+                      <span class="note">No upper limit</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-80e" class="input-field" value="0">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>80G Eligible Donations</span>
+                      <span class="note">50% qualifying amount</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-80g" class="input-field" value="0">
                     </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Tab 4: Advance Tax & Statutory Interest -->
+              <div id="pane-advtax" class="tab-content-pane" style="display: none;">
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>TDS on Salary (Form 16)</span>
+                      <span class="note">Schedule TDS-1</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-tds-salary" class="input-field" value="265000">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>TDS Other (Banks / AIS)</span>
+                      <span class="note">Schedule TDS-2</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-tds-other" class="input-field" value="15000">
+                    </div>
+                  </div>
+                </div>
+
+                <div style="font-size:0.78rem; font-weight:600; color:var(--text-primary); margin: 10px 0 6px;">Quarterly Advance Tax Payments (Challan 280):</div>
+                <div class="advtax-schedule-grid">
+                  <div class="advtax-quarter-box">
+                    <div class="q-title">Q1: By 15 June</div>
+                    <div class="q-target">Target 15%</div>
+                    <div class="input-wrapper" style="margin-top:4px;">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-advtax-q1" class="input-field" value="5000" style="padding-left:18px; font-size:0.76rem;">
+                    </div>
+                  </div>
+                  <div class="advtax-quarter-box">
+                    <div class="q-title">Q2: By 15 Sept</div>
+                    <div class="q-target">Target 45%</div>
+                    <div class="input-wrapper" style="margin-top:4px;">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-advtax-q2" class="input-field" value="5000" style="padding-left:18px; font-size:0.76rem;">
+                    </div>
+                  </div>
+                  <div class="advtax-quarter-box">
+                    <div class="q-title">Q3: By 15 Dec</div>
+                    <div class="q-target">Target 75%</div>
+                    <div class="input-wrapper" style="margin-top:4px;">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-advtax-q3" class="input-field" value="5000" style="padding-left:18px; font-size:0.76rem;">
+                    </div>
+                  </div>
+                  <div class="advtax-quarter-box">
+                    <div class="q-title">Q4: By 15 March</div>
+                    <div class="q-target">Target 100%</div>
+                    <div class="input-wrapper" style="margin-top:4px;">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-advtax-q4" class="input-field" value="5000" style="padding-left:18px; font-size:0.76rem;">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Statutory Due Date</span>
+                      <span class="note">ITR-1/2 vs 3/4</span>
+                    </div>
+                    <select id="inp-due-date" class="input-field">
+                      <option value="2026-07-31" selected>31 July 2026 (Salaried / ITR-1 / ITR-2)</option>
+                      <option value="2026-08-31">31 August 2026 (ITR-3 / ITR-4 Non-Audit)</option>
+                      <option value="2026-10-31">31 October 2026 (Tax Audit Cases)</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Planned Filing Date</span>
+                      <span class="note">Used for Section 234F &amp; Interest</span>
+                    </div>
+                    <input type="date" id="inp-filing-date" class="input-field" value="2026-07-28">
+                  </div>
+                </div>
+
+                <!-- Live Interest Diagnostics Strip -->
+                <div class="interest-diagnostics-box">
+                  <div style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Statutory Interest &amp; Fee Breakdown:</div>
+                  <div class="interest-row"><span>Interest u/s 234A (Delay in filing):</span> <strong id="diag-234a">₹0</strong></div>
+                  <div class="interest-row"><span>Interest u/s 234B (Shortfall in Advance Tax):</span> <strong id="diag-234b">₹0</strong></div>
+                  <div class="interest-row"><span>Interest u/s 234C (Deferment of Installments):</span> <strong id="diag-234c">₹0</strong></div>
+                  <div class="interest-row"><span>Late Filing Fee u/s 234F:</span> <strong id="diag-234f">₹0</strong></div>
+                </div>
+              </div>
+
+              <!-- Tab 5: Slab Ledger -->
+              <div id="pane-slabs" class="tab-content-pane" style="display: none;">
+                <div style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:10px;">
+                  Mathematical breakdown of taxable income across each statutory tax bracket:
+                </div>
+                <div class="sft-table-wrap">
+                  <table class="sft-table">
+                    <thead>
+                      <tr>
+                        <th>New Regime Bracket</th>
+                        <th>Taxable</th>
+                        <th>Tax</th>
+                        <th style="border-left:1px solid var(--border-subtle);">Old Regime Bracket</th>
+                        <th>Taxable</th>
+                        <th>Tax</th>
+                      </tr>
+                    </thead>
+                    <tbody id="slab-breakdown-tbody">
+                      <!-- Injected via JavaScript -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
             </div>
 
             <!-- Right: Real-time Verdict & Ledger -->
@@ -354,38 +573,52 @@
                 <!-- New Regime Ledger -->
                 <div class="regime-column winner" id="col-new">
                   <div class="regime-badge">DEFAULT</div>
-                  <div class="regime-heading">New Regime</div>
+                  <div class="regime-heading">New Regime (u/s 115BAC)</div>
                   <div class="ledger-row"><span class="label">Gross Total:</span> <span class="val" id="val-new-gross">₹26,06,700</span></div>
-                  <div class="ledger-row"><span class="label">Std. Deduction:</span> <span class="val">-₹75,000</span></div>
+                  <div class="ledger-row"><span class="label">Standard Deduction:</span> <span class="val" id="val-new-stdded">-₹75,000</span></div>
+                  <div class="ledger-row"><span class="label">Employer NPS 80CCD(2):</span> <span class="val" id="val-new-nps2">-₹1,00,000</span></div>
                   <div class="ledger-row"><span class="label">Taxable Slab Income:</span> <span class="val" id="val-new-taxable">₹25,06,700</span></div>
                   <div class="ledger-row"><span class="label">Tax on Slabs:</span> <span class="val" id="val-new-slabtax">₹2,75,425</span></div>
-                  <div class="ledger-row"><span class="label">87A Rebate:</span> <span class="val" id="val-new-rebate">-₹0</span></div>
-                  <div class="ledger-row"><span class="label">Special Taxes (CG):</span> <span class="val" id="val-new-special">₹13,375</span></div>
+                  <div class="ledger-row"><span class="label">87A Rebate &amp; Relief:</span> <span class="val" id="val-new-rebate">-₹0</span></div>
+                  <div class="ledger-row"><span class="label">Special CG Taxes (111A/112A):</span> <span class="val" id="val-new-special">₹13,375</span></div>
+                  <div class="ledger-row"><span class="label">Surcharge:</span> <span class="val" id="val-new-surcharge">₹0</span></div>
                   <div class="ledger-row"><span class="label">Cess (4%):</span> <span class="val" id="val-new-cess">₹11,552</span></div>
                   <div class="ledger-row total"><span class="label">Total Tax Liability:</span> <span class="val" id="val-new-totaltax">₹3,00,350</span></div>
+                  <div class="ledger-row"><span class="label">Prepaid Taxes (TDS + Adv):</span> <span class="val" id="val-new-prepaid">-₹3,00,000</span></div>
+                  <div class="ledger-row"><span class="label">Late Fee (234F):</span> <span class="val" id="val-new-fee">₹0</span></div>
                   <div class="ledger-row payable"><span class="label">Net Payable / Refund:</span> <span class="val" id="val-new-payable">₹720</span></div>
                 </div>
 
                 <!-- Old Regime Ledger -->
                 <div class="regime-column" id="col-old">
-                  <div class="regime-heading">Old Regime</div>
+                  <div class="regime-heading">Old Regime (Optional)</div>
                   <div class="ledger-row"><span class="label">Gross Total:</span> <span class="val" id="val-old-gross">₹26,06,700</span></div>
-                  <div class="ledger-row"><span class="label">Total Deductions:</span> <span class="val" id="val-old-deductions">-₹4,65,000</span></div>
-                  <div class="ledger-row"><span class="label">Taxable Slab Income:</span> <span class="val" id="val-old-taxable">₹21,41,700</span></div>
-                  <div class="ledger-row"><span class="label">Tax on Slabs:</span> <span class="val" id="val-old-slabtax">₹4,55,010</span></div>
+                  <div class="ledger-row"><span class="label">Exempt Salary (Std+HRA+PT):</span> <span class="val" id="val-old-exemptsal">-₹2,92,400</span></div>
+                  <div class="ledger-row"><span class="label">House Property Loss 24(b):</span> <span class="val" id="val-old-hploss">-₹1,80,000</span></div>
+                  <div class="ledger-row"><span class="label">Chapter VI-A Deductions:</span> <span class="val" id="val-old-deductions">-₹3,35,000</span></div>
+                  <div class="ledger-row"><span class="label">Taxable Slab Income:</span> <span class="val" id="val-old-taxable">₹18,74,300</span></div>
+                  <div class="ledger-row"><span class="label">Tax on Slabs:</span> <span class="val" id="val-old-slabtax">₹3,13,290</span></div>
                   <div class="ledger-row"><span class="label">87A Rebate:</span> <span class="val" id="val-old-rebate">-₹0</span></div>
-                  <div class="ledger-row"><span class="label">Special Taxes (CG):</span> <span class="val" id="val-old-special">₹13,375</span></div>
-                  <div class="ledger-row"><span class="label">Cess (4%):</span> <span class="val" id="val-old-cess">₹18,735</span></div>
-                  <div class="ledger-row total"><span class="label">Total Tax Liability:</span> <span class="val" id="val-old-totaltax">₹4,87,120</span></div>
-                  <div class="ledger-row payable"><span class="label">Net Payable / Refund:</span> <span class="val" id="val-old-payable">₹2,07,120</span></div>
+                  <div class="ledger-row"><span class="label">Special CG Taxes (111A/112A):</span> <span class="val" id="val-old-special">₹13,375</span></div>
+                  <div class="ledger-row"><span class="label">Surcharge:</span> <span class="val" id="val-old-surcharge">₹0</span></div>
+                  <div class="ledger-row"><span class="label">Cess (4%):</span> <span class="val" id="val-old-cess">₹13,067</span></div>
+                  <div class="ledger-row total"><span class="label">Total Tax Liability:</span> <span class="val" id="val-old-totaltax">₹3,39,730</span></div>
+                  <div class="ledger-row"><span class="label">Prepaid Taxes (TDS + Adv):</span> <span class="val" id="val-old-prepaid">-₹3,00,000</span></div>
+                  <div class="ledger-row"><span class="label">Late Fee (234F):</span> <span class="val" id="val-old-fee">₹0</span></div>
+                  <div class="ledger-row payable"><span class="label">Net Payable / Refund:</span> <span class="val" id="val-old-payable">₹39,730</span></div>
                 </div>
               </div>
 
               <div class="studio-action-strip">
-                <span class="mono" style="font-size: 0.76rem; color: var(--text-tertiary);">Deterministic Engine Core v1.0.0</span>
-                <button onclick="downloadFilingPackJSON()" class="btn-cta" style="font-size: 0.8rem; padding: 7px 14px;">
-                  📥 Download Filing Pack JSON
-                </button>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-tertiary);">Deterministic Engine v1.0.0</span>
+                <div style="display:flex; gap:8px;">
+                  <button onclick="printMasterTaxSheet()" class="btn-ghost" style="font-size: 0.78rem; padding: 6px 12px;">
+                    🖨️ Print Master Tax Sheet
+                  </button>
+                  <button onclick="downloadFilingPackJSON()" class="btn-cta" style="font-size: 0.78rem; padding: 6px 12px;">
+                    📥 Export JSON Pack
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -393,58 +626,299 @@
       </div>
     </section>
 
+    <!-- AIS SFT Code Intelligence Classifier -->
+    <section id="sft-intelligence" style="background: rgba(0, 0, 0, 0.15);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">AIS SFT Intelligence</span>
+          <h2 class="section-title">Annual Information Statement (AIS) SFT Classifier</h2>
+          <p class="section-desc">Search and filter Statement of Financial Transaction (SFT) reporting codes to map high-value transactions directly to statutory ITR schedules.</p>
+        </div>
+
+        <div class="studio-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:16px; flex-wrap:wrap;">
+            <div class="filter-chips-bar" style="margin-bottom:0;">
+              <button class="chip-filter active" onclick="setSftCategory('all', this)">All Codes (18)</button>
+              <button class="chip-filter" onclick="setSftCategory('banking', this)">Banking &amp; Cash</button>
+              <button class="chip-filter" onclick="setSftCategory('equities', this)">Equities &amp; Funds</button>
+              <button class="chip-filter" onclick="setSftCategory('realestate', this)">Real Estate</button>
+              <button class="chip-filter" onclick="setSftCategory('tds', this)">TDS &amp; Withholding</button>
+              <button class="chip-filter" onclick="setSftCategory('crypto', this)">Crypto / VDA</button>
+            </div>
+            <input type="text" placeholder="Search code or keywords (e.g. SFT-006, Mutual Funds)..." class="input-field" style="max-width:300px;" oninput="filterSftCodes(this.value)">
+          </div>
+
+          <div class="sft-table-wrap">
+            <table class="sft-table">
+              <thead>
+                <tr>
+                  <th style="width: 15%;">SFT / TDS Code</th>
+                  <th style="width: 45%;">Transaction Type &amp; Reporting Threshold</th>
+                  <th style="width: 25%;">Target ITR Schedule</th>
+                  <th style="width: 15%;">Audit Risk</th>
+                </tr>
+              </thead>
+              <tbody id="sft-table-body">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statutory Deductions & Exemptions Matrix -->
+    <section id="matrix">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Statutory Reference</span>
+          <h2 class="section-title">Deductions &amp; Exemptions Master Matrix</h2>
+          <p class="section-desc">Side-by-side comparison of Chapter VI-A deductions and statutory exemptions for AY 2026-27.</p>
+        </div>
+
+        <div class="studio-card">
+          <div class="sft-table-wrap">
+            <table class="matrix-table">
+              <thead>
+                <tr>
+                  <th style="width: 18%;">Section</th>
+                  <th style="width: 32%;">Statutory Purpose &amp; Instruments</th>
+                  <th style="width: 18%;">Max Limit</th>
+                  <th style="width: 16%;">New Regime</th>
+                  <th style="width: 16%;">Old Regime</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Standard Deduction</td>
+                  <td>Salaried employees and pensioners u/s 16(ia) / 57(iia)</td>
+                  <td class="mono">₹75,000 / ₹50,000</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">₹75,000</td>
+                  <td style="color:var(--brand-teal); font-weight:600;">₹50,000</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 80CCD(2)</td>
+                  <td>Employer contribution to National Pension System (NPS)</td>
+                  <td class="mono">14% Govt / 10% Pvt</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 80C</td>
+                  <td>EPF, PPF, ELSS, Life Insurance Premium, Home Loan Principal</td>
+                  <td class="mono">₹1,50,000</td>
+                  <td style="color:var(--brand-rose); font-weight:600;">Not Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 80CCD(1B)</td>
+                  <td>Voluntary individual contribution to NPS Tier-1</td>
+                  <td class="mono">₹50,000</td>
+                  <td style="color:var(--brand-rose); font-weight:600;">Not Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 24(b)</td>
+                  <td>Interest on Home Loan (Self-Occupied property)</td>
+                  <td class="mono">₹2,00,000</td>
+                  <td style="color:var(--brand-rose); font-weight:600;">Not Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 80D</td>
+                  <td>Health Insurance Mediclaim (Self: ₹25k/50k, Parents: ₹25k/50k)</td>
+                  <td class="mono">Up to ₹1,00,000</td>
+                  <td style="color:var(--brand-rose); font-weight:600;">Not Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 80E</td>
+                  <td>Interest on Higher Education Loan for self, spouse, or children</td>
+                  <td class="mono">No Upper Cap (8 Yrs)</td>
+                  <td style="color:var(--brand-rose); font-weight:600;">Not Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 80TTA / 80TTB</td>
+                  <td>Savings interest (80TTA: ₹10k) / Senior deposit interest (80TTB: ₹50k)</td>
+                  <td class="mono">₹10,000 / ₹50,000</td>
+                  <td style="color:var(--brand-rose); font-weight:600;">Not Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="font-weight:600; color:var(--text-primary);">Section 10(13A)</td>
+                  <td>House Rent Allowance (HRA) exemption</td>
+                  <td class="mono">Min of 3 Rules</td>
+                  <td style="color:var(--brand-rose); font-weight:600;">Not Allowed</td>
+                  <td style="color:var(--brand-emerald); font-weight:600;">Allowed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Golden Test Suite Explorer -->
+    <section id="golden-tests" style="background: rgba(0, 0, 0, 0.15);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Test Rigor</span>
+          <h2 class="section-title">Golden Test Scenarios Explorer</h2>
+          <p class="section-desc">Inspect verified test cases hand-derived from statutory Income-tax Act provisions and load them directly into the studio.</p>
+        </div>
+
+        <div class="golden-tests-box">
+          <div class="test-scenarios-pills">
+            <button class="test-scenario-pill active" onclick="loadGoldenScenario('case-01')">01: 87A Marginal Relief</button>
+            <button class="test-scenario-pill" onclick="loadGoldenScenario('case-02')">02: ₹3.5Cr Surcharge Cap</button>
+            <button class="test-scenario-pill" onclick="loadGoldenScenario('case-03')">03: 112A ₹1.25L Exemption</button>
+            <button class="test-scenario-pill" onclick="loadGoldenScenario('case-04')">04: 44ADA Presumptive</button>
+            <button class="test-scenario-pill" onclick="loadGoldenScenario('case-05')">05: Deductions Heavy</button>
+            <button class="test-scenario-pill" onclick="loadGoldenScenario('case-06')">06: Senior Citizen 80TTB</button>
+          </div>
+
+          <div style="background:var(--bg-input); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; flex-wrap:wrap; gap:10px;">
+              <div id="golden-test-title" style="font-size:0.95rem; font-weight:700; color:var(--text-primary);">
+                Section 87A Marginal Relief Cliff (₹12,45,000 Income)
+              </div>
+              <button onclick="loadScenarioIntoStudio()" class="btn-cta" style="font-size:0.75rem; padding:5px 10px;">
+                ⚡ Load into Tax Studio
+              </button>
+            </div>
+            <p id="golden-test-desc" style="font-size:0.84rem; color:var(--text-secondary); margin-bottom:10px;">
+              Asserts that tax payable on taxable income of ₹12,45,000 under the New Regime cannot exceed ₹45,000.
+            </p>
+            <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-subtle); border-radius:var(--radius-xs); padding:8px 12px; margin-bottom:12px; font-size:0.78rem;">
+              <span style="font-weight:600; color:var(--brand-teal-light);">Statutory Verification Note:</span>
+              <span id="golden-test-note" style="color:var(--text-secondary); margin-left:6px;"></span>
+            </div>
+            <div style="font-size:0.75rem; text-transform:uppercase; font-weight:600; color:var(--text-tertiary); margin-bottom:4px;">Verified Input Fixture:</div>
+            <pre id="golden-test-inputs" class="code-preview-pane" style="height:120px;"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Privacy & Blind Extraction Sandbox -->
-    <section id="redactor" style="background: rgba(0, 0, 0, 0.15);">
+    <section id="redactor">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Zero-Knowledge Extraction</span>
           <h2 class="section-title">Built-In PII Redaction &amp; Privacy Shield</h2>
-          <p class="section-desc">How TaxSarthi extracts tax figures from AIS and Form 16 without exposing identity credentials.</p>
+          <p class="section-desc">Test TaxSarthi's client-side privacy scrubber that strips PAN, Aadhaar, TAN, accounts, and contact details before processing.</p>
         </div>
 
         <div class="redactor-box">
+          <div class="redactor-toolbar">
+            <div style="display:flex; gap:8px;">
+              <button onclick="loadSampleRedactor('form16')" class="btn-ghost" style="font-size:0.75rem; padding:5px 10px;">
+                📄 Load Form 16 Text
+              </button>
+              <button onclick="loadSampleRedactor('ais')" class="btn-ghost" style="font-size:0.75rem; padding:5px 10px;">
+                📊 Load AIS JSON
+              </button>
+              <button onclick="executeRedaction()" class="btn-cta" style="font-size:0.75rem; padding:5px 12px;">
+                🛡️ Execute PII Scrub
+              </button>
+            </div>
+            <span class="privacy-badge" id="redactor-count-badge">
+              6 Identities Scrubbed · 100% Client-Side
+            </span>
+          </div>
+
           <div class="redactor-grid">
             <div>
-              <div style="font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary);">
-                1. Raw Structured AIS JSON / Form 16 Text
+              <div style="font-size: 0.82rem; font-weight: 700; margin-bottom: 6px; color: var(--text-primary);">
+                1. Raw Document Text / AIS JSON (Contains PII):
               </div>
-              <div class="code-preview-pane">
-{
-  "financialYear": "2025-26",
-  "assessmentYear": "2026-27",
-  "taxpayer": {
-    "pan": "ABCDE1234F",
-    "aadhaar": "987654321098",
-    "bankAccount": "50100234567890"
-  },
-  "salaryDetails": {
-    "grossSalary": 2400000,
-    "tdsDeducted": 265000
-  }
-}
-              </div>
+              <textarea id="redactor-input" class="redactor-textarea" oninput="executeRedaction()"></textarea>
             </div>
 
             <div>
-              <div style="font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; color: var(--brand-emerald);">
-                2. Client-Side Sanitized Extraction (Zero Credentials Stored)
+              <div style="font-size: 0.82rem; font-weight: 700; margin-bottom: 6px; color: var(--brand-emerald);">
+                2. Sanitized Structured Output (Zero PII Stored):
               </div>
-              <div class="code-preview-pane">
-{
-  "income": {
-    "salary": {
-      "gross": 2400000
-    }
-  },
-  "taxes_paid": {
-    "tds": 265000
-  },
-  "scrubbed_identities": {
-    "pan": <span class="redacted-tag">[REDACTED_PAN]</span>,
-    "aadhaar": <span class="redacted-tag">[REDACTED_AADHAAR]</span>,
-    "account": <span class="redacted-tag">[REDACTED_ACCOUNT]</span>
-  }
-}
+              <div id="redactor-output" class="code-preview-pane"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-Filing Audit Checklist -->
+    <section id="audit-checklist" style="background: rgba(0, 0, 0, 0.15);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Compliance Verification</span>
+          <h2 class="section-title">Pre-Filing Audit &amp; Reconciliation Checklist</h2>
+          <p class="section-desc">Review these 10 critical checks to prevent statutory notices and mismatch inquiries from the Income Tax Department.</p>
+        </div>
+
+        <div class="checklist-card">
+          <div class="checklist-grid">
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" checked id="chk-1">
+              <div>
+                <label for="chk-1" class="checklist-title">1. Reconcile Form 16 Part A TAN against 26AS</label>
+                <div class="checklist-desc">Ensure employer TAN matches exactly between Part A and Form 26AS to prevent TDS credit rejection.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" checked id="chk-2">
+              <div>
+                <label for="chk-2" class="checklist-title">2. Verify AIS Feedback Status (Accept / Dispute)</label>
+                <div class="checklist-desc">Confirm that duplicate or erroneous AIS entries have submitted feedback before filing.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" checked id="chk-3">
+              <div>
+                <label for="chk-3" class="checklist-title">3. Aggregate Multi-Broker Capital Gains Statements</label>
+                <div class="checklist-desc">Combine Tax P&amp;L from Zerodha, Groww, Upstox into a single Section 111A and 112A schedule.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" checked id="chk-4">
+              <div>
+                <label for="chk-4" class="checklist-title">4. Disclose Savings &amp; FD Interest in Schedule OS</label>
+                <div class="checklist-desc">All bank interest reported in AIS must appear in Schedule Other Sources even if TDS was not deducted.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" id="chk-5">
+              <div>
+                <label for="chk-5" class="checklist-title">5. Schedule FA Disclosure for Foreign Assets / RSUs</label>
+                <div class="checklist-desc">Mandatory for anyone holding US stocks, RSUs (e.g. ESPP), or overseas bank accounts. Cannot use ITR-1.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" id="chk-6">
+              <div>
+                <label for="chk-6" class="checklist-title">6. Validate Pre-Validated Bank Account for Refund</label>
+                <div class="checklist-desc">Ensure your active bank account is linked to your PAN and validated for electronic refund credit.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" checked id="chk-7">
+              <div>
+                <label for="chk-7" class="checklist-title">7. File Form 10-IEA if Opting for Old Regime (Business)</label>
+                <div class="checklist-desc">Taxpayers with business or freelance income opting out of New Regime must submit Form 10-IEA prior to due date.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <input type="checkbox" class="checklist-checkbox" checked id="chk-8">
+              <div>
+                <label for="chk-8" class="checklist-title">8. Pay Self-Assessment Tax under Minor Head 300</label>
+                <div class="checklist-desc">Pay any balance tax via e-Pay Tax before clicking Submit on the portal.</div>
               </div>
             </div>
           </div>
@@ -458,7 +932,7 @@
         <div class="section-header">
           <span class="section-tag">Decision Tree</span>
           <h2 class="section-title">Which ITR Form Should You File?</h2>
-          <p class="section-desc">Answer 3 simple questions to determine the exact form required by the Income Tax Department.</p>
+          <p class="section-desc">Answer 4 quick questions to determine the exact form required by the Income Tax Department.</p>
         </div>
 
         <div class="wizard-card">
@@ -466,7 +940,7 @@
             <div class="wizard-title">1. What are your primary income sources?</div>
             <div class="option-pill-group">
               <button class="wizard-option selected" onclick="selectWizardOption('incomeType', 'salary', this)">Salary / Pension + 1 House Property</button>
-              <button class="wizard-option" onclick="selectWizardOption('incomeType', 'multiple_hp', this)">Multiple Properties / Capital Gains</button>
+              <button class="wizard-option" onclick="selectWizardOption('incomeType', 'multiple_hp', this)">Multiple Properties / Agricultural &gt; ₹5k</button>
             </div>
           </div>
 
@@ -482,8 +956,16 @@
             <div class="wizard-title">3. Do you have freelance, consulting, or business income?</div>
             <div class="option-pill-group">
               <button class="wizard-option selected" onclick="selectWizardOption('hasBusiness', 'no', this)">No Business Income</button>
-              <button class="wizard-option" onclick="selectWizardOption('hasBusiness', 'presumptive', this)">Yes, Presumptive (u/s 44AD / 44ADA)</button>
+              <button class="wizard-option" onclick="selectWizardOption('hasBusiness', 'presumptive', this)">Yes, Presumptive (44AD / 44ADA)</button>
               <button class="wizard-option" onclick="selectWizardOption('hasBusiness', 'full', this)">Yes, Full Business Accounts (P&amp;L)</button>
+            </div>
+          </div>
+
+          <div class="wizard-question">
+            <div class="wizard-title">4. Do you hold Foreign Assets, Overseas Accounts, or US RSUs?</div>
+            <div class="option-pill-group">
+              <button class="wizard-option selected" onclick="selectWizardOption('hasForeignAssets', 'no', this)">No Foreign Assets</button>
+              <button class="wizard-option" onclick="selectWizardOption('hasForeignAssets', 'yes', this)">Yes, hold RSUs / Foreign Accounts (Schedule FA)</button>
             </div>
           </div>
 
@@ -610,9 +1092,11 @@ taxsarthi selftest
           <div class="footer-heading">Product</div>
           <ul class="footer-nav">
             <li><a href="#studio">Tax Studio</a></li>
+            <li><a href="#sft-intelligence">SFT Directory</a></li>
+            <li><a href="#matrix">Deductions Matrix</a></li>
+            <li><a href="#golden-tests">Golden Tests</a></li>
             <li><a href="#redactor">PII Redactor</a></li>
-            <li><a href="#wizard">Form Selector</a></li>
-            <li><a href="#portal">Portal Guide</a></li>
+            <li><a href="#audit-checklist">Audit Checklist</a></li>
           </ul>
         </div>
 
