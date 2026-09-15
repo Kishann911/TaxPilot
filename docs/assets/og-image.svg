@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="og-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041F1E"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="og-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+  
+  <!-- Subtle Grid -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="630" />
+    <line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="500" y1="0" x2="500" y2="630" />
+    <line x1="700" y1="0" x2="700" y2="630" />
+    <line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="1100" y1="0" x2="1100" y2="630" />
+    <line x1="0" y1="150" x2="1200" y2="150" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="450" x2="1200" y2="450" />
+  </g>
+
+  <!-- Logo Mark -->
+  <g transform="translate(100, 100)">
+    <rect width="80" height="80" rx="20" fill="url(#og-teal)"/>
+    <path d="M40 16 L60 26 C60 46 40 60 40 65 C40 60 20 46 20 26 Z" fill="rgba(255,255,255,0.15)" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M31 30 H49 M31 36 H45 M31 30 V48 C35 48 42 47 42 41 C42 35 35 35 31 35 M37 46 L49 61" 
+          stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="49" cy="26" r="4.5" fill="#F59E0B"/>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <text x="210" y="155" font-family="'Inter', sans-serif" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-0.03em">
+    Tax<tspan fill="#34D399">Sarthi</tspan>
+  </text>
+  <rect x="520" y="115" width="160" height="36" rx="18" fill="rgba(16,185,129,0.15)" stroke="#10B981"/>
+  <text x="545" y="139" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#34D399">AY 2026-27</text>
+
+  <text x="100" y="270" font-family="'Inter', sans-serif" font-size="44" font-weight="700" fill="#F1F5F9" letter-spacing="-0.02em">
+    File your Indian ITR from your terminal &amp; web.
+  </text>
+  <text x="100" y="330" font-family="'Inter', sans-serif" font-size="24" font-weight="400" fill="#94A3B8">
+    Deterministic Python computations. No LLM arithmetic. 205+ tests &amp; 3,000+ fuzzed invariants.
+  </text>
+
+  <!-- Feature Pills -->
+  <g transform="translate(100, 420)">
+    <rect width="280" height="64" rx="12" fill="#1E293B" stroke="#334155"/>
+    <text x="30" y="38" font-family="'JetBrains Mono', monospace" font-size="16" fill="#34D399" font-weight="700">✓ 51 Golden Tests</text>
+
+    <rect x="300" width="310" height="64" rx="12" fill="#1E293B" stroke="#334155"/>
+    <text x="330" y="38" font-family="'JetBrains Mono', monospace" font-size="16" fill="#38BDF8" font-weight="700">✓ Old vs New Comparison</text>
+
+    <rect x="630" width="330" height="64" rx="12" fill="#1E293B" stroke="#334155"/>
+    <text x="660" y="38" font-family="'JetBrains Mono', monospace" font-size="16" fill="#FBBF24" font-weight="700">✓ Zero Password/OTP Access</text>
+  </g>
+
+  <!-- URL footer -->
+  <text x="100" y="560" font-family="'JetBrains Mono', monospace" font-size="18" fill="#64748B">
+    github.com/karanb192/itr-wala
+  </text>
+</svg>
