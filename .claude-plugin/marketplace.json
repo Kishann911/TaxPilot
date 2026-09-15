@@ -1,0 +1,12 @@
+{
+  "name": "taxsarthi-claude-marketplace",
+  "description": "TaxSarthi Claude Code Plugin Marketplace",
+  "plugins": [
+    {
+      "name": "taxsarthi",
+      "description": "TaxSarthi Indian Income Tax (ITR) Assistant for Claude Code",
+      "version": "1.0.0",
+      "skills": ["skills/taxsarthi"]
+    }
+  ]
+}
