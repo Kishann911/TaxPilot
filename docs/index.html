@@ -3,429 +3,591 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TaxSarthi · Deterministic Indian Income Tax (ITR) Engine & AI Co-Pilot (AY 2026-27)</title>
-  <meta name="description" content="TaxSarthi - File your Indian Income Tax Return (ITR) for AY 2026-27 with mathematical certainty. Deterministic Python engine, live Old vs New regime comparison, zero prompt arithmetic, and full PII redaction.">
-  <meta name="keywords" content="TaxSarthi, Indian Income Tax, ITR Filing, AY 2026-27, FY 2025-26, Tax Calculator India, Form 16 Parser, AIS JSON, 87A Rebate, Old vs New Regime">
+  <title>TaxSarthi · Deterministic Indian Income Tax Return (ITR) Engine & AI Co-Pilot</title>
+  <meta name="description" content="TaxSarthi - Professional, deterministic Indian Income Tax computation engine & AI filing co-pilot for AY 2026-27 (FY 2025-26). Zero LLM arithmetic, 205+ verified statutory tests, and complete PII redaction.">
+  <meta name="keywords" content="TaxSarthi, Indian Income Tax, ITR Filing, AY 2026-27, FY 2025-26, Tax Calculator India, Form 16, AIS JSON, 87A Rebate, Old vs New Regime">
   <meta name="author" content="TaxSarthi Contributors">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Social & Open Graph Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://karanb192.github.io/itr-wala/">
   <meta property="og:site_name" content="TaxSarthi">
-  <meta property="og:title" content="TaxSarthi · Deterministic Indian ITR Filing & Wealth Co-Pilot">
-  <meta property="og:description" content="Every rupee computed by deterministic code. Compare Old vs New regime, audit deductions, and prepare your ITR filing pack with 205+ verified tests.">
+  <meta property="og:title" content="TaxSarthi · Deterministic Indian ITR Engine & Co-Pilot">
+  <meta property="og:description" content="Every rupee computed by deterministic code. Compare Old vs New regime, audit deductions, and prepare your ITR filing pack with 205+ verified statutory tests.">
   <meta property="og:image" content="assets/og-image.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TaxSarthi · Deterministic Indian ITR Filing">
+  <meta name="twitter:title" content="TaxSarthi · Deterministic Indian ITR Engine">
   <meta name="twitter:description" content="Deterministic Indian Income Tax filing for AY 2026-27. Test-driven, zero prompt math, full privacy.">
   <meta name="twitter:image" content="assets/og-image.svg">
-
-  <!-- Schema.org Application -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "TaxSarthi",
-    "operatingSystem": "Cross-platform (Web, macOS, Linux, Windows)",
-    "applicationCategory": "FinanceApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR"
-    },
-    "softwareVersion": "1.0.0 (AY 2026-27)",
-    "license": "https://opensource.org/licenses/MIT",
-    "description": "Deterministic Indian Income Tax computation engine and AI-assisted ITR filing co-pilot."
-  }
-  </script>
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Navigation Header -->
+  <!-- Announcement Bar -->
+  <div class="top-bar">
+    <span>🛡️ Pinned to <strong>AY 2026-27 (FY 2025-26)</strong> · Section 87A Marginal Relief &amp; 112A Capital Gains Rules Verified</span>
+  </div>
+
+  <!-- Main Navigation Header -->
   <header>
-    <div class="container nav-wrap">
-      <a href="#" class="logo-link">
-        <img src="assets/logo-white.svg" alt="TaxSarthi Logo" class="logo-img" id="nav-logo">
+    <div class="container navbar">
+      <a href="#" class="nav-brand">
+        <img src="assets/logo-white.svg" alt="TaxSarthi Logo" class="nav-logo-svg" id="nav-logo">
       </a>
 
-      <ul class="nav-menu">
-        <li><a href="#studio" class="nav-link">Tax Studio</a></li>
-        <li><a href="#architecture" class="nav-link">How It Works</a></li>
-        <li><a href="#portal" class="nav-link">Portal Guide</a></li>
-        <li><a href="#cli" class="nav-link">CLI &amp; Agents</a></li>
-        <li><a href="#receipts" class="nav-link">Test Receipts</a></li>
+      <ul class="nav-links">
+        <li><a href="#studio" class="nav-item">Tax Studio</a></li>
+        <li><a href="#redactor" class="nav-item">Privacy Redactor</a></li>
+        <li><a href="#wizard" class="nav-item">Form Selector</a></li>
+        <li><a href="#portal" class="nav-item">Portal Guide</a></li>
+        <li><a href="#cli" class="nav-item">CLI &amp; Agents</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="theme-toggle" class="btn-theme-toggle" title="Toggle Theme" aria-label="Toggle Dark/Light Mode">☀️</button>
-        <a href="https://github.com/karanb192/itr-wala" target="_blank" rel="noopener" class="btn-secondary mono" style="font-size: 0.85rem;">
-          <svg height="18" width="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        <button id="theme-toggle" class="btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">☀️</button>
+        <a href="https://github.com/karanb192/itr-wala" target="_blank" rel="noopener" class="btn-ghost mono" style="font-size: 0.82rem;">
+          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
+        <a href="#studio" class="btn-cta">Open Studio</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="hero-badge">
-            ⚡ Assessment Year 2026-27 (FY 2025-26) Ready
+          <div class="hero-pill">
+            <span class="dot-live"></span>
+            Deterministic Math Engine · AY 2026-27
           </div>
-          <h1 class="hero-title">
-            File Indian ITR with <br><span class="grad">Mathematical Certainty</span>
+
+          <h1 class="hero-heading">
+            Indian tax filing with <br><span class="gradient-text">mathematical certainty.</span>
           </h1>
-          <p class="hero-subtitle">
-            TaxSarthi splits tax filing the way it should be: AI transcribes your Form 16 and AIS documents, while a <strong>deterministic, test-proven Python engine</strong> computes every rupee of tax, rebate, surcharge, and interest.
+
+          <p class="hero-desc">
+            TaxSarthi decouples AI document understanding from tax calculations. AI transcribes your Form 16 and AIS JSON, while a <strong>pure, tested Python calculation engine</strong> computes every rupee of slab tax, rebate, surcharge, and interest.
           </p>
 
-          <div class="hero-ctas">
-            <a href="#studio" class="btn-primary">
-              🚀 Launch Tax Studio
+          <div class="hero-actions">
+            <a href="#studio" class="btn-cta">
+              ⚡ Launch Interactive Studio
             </a>
-            <a href="#cli" class="btn-secondary mono">
-              $ taxsarthi --help
+            <a href="#cli" class="btn-ghost mono">
+              $ taxsarthi compute
             </a>
           </div>
+
+          <div class="install-command-bar">
+            <span class="mono" style="color: var(--text-tertiary); font-size: 0.8rem;">$</span>
+            <code>git clone https://github.com/karanb192/itr-wala.git &amp;&amp; ./install.sh</code>
+            <button id="btn-copy-install" class="btn-copy">COPY</button>
+          </div>
         </div>
 
-        <!-- Interactive Terminal Widget -->
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
+        <!-- Live Terminal Box -->
+        <div class="hero-terminal">
+          <div class="terminal-bar">
+            <div class="window-controls">
+              <span class="win-dot red"></span>
+              <span class="win-dot yellow"></span>
+              <span class="win-dot green"></span>
             </div>
-            <div class="terminal-title">taxsarthi engine — bash</div>
-            <div style="font-size: 0.75rem; color: #34d399;">● CI PASS</div>
+            <div class="terminal-title-text">taxsarthi-engine — AY 2026-27</div>
+            <div style="font-size: 0.72rem; color: #10b981; font-weight: 600;">● TESTED</div>
           </div>
-          <div class="terminal-body">
-            <p><span class="prompt">taxsarthi@local:~$</span> <span class="cmd">taxsarthi compute income.json</span></p>
-            <p class="dim">Income-tax computation for FY 2025-26 (AY 2026-27)</p>
-            <p class="dim">================================================================</p>
-            <p><span class="gold">[NEW REGIME]</span></p>
-            <p>  Gross total income <span class="num" style="float:right;">26,06,700</span></p>
-            <p>  Standard Deduction <span class="num" style="float:right;">75,000</span></p>
-            <p>  Tax on slab income <span class="num" style="float:right;">2,75,425</span></p>
-            <p>  111A STCG (equity 20%) <span class="num" style="float:right;">9,000</span></p>
-            <p>  112A LTCG (equity 12.5%) <span class="num" style="float:right;">4,375</span></p>
-            <p>  Health &amp; Education Cess (4%) <span class="num" style="float:right;">11,552</span></p>
-            <p>  TOTAL TAX <span class="success" style="float:right;">₹3,00,350</span></p>
-            <p>  NET PAYABLE (-ve=refund) <span class="num" style="float:right;">₹720</span></p>
-            <br>
-            <p class="dim">================================================================</p>
-            <p class="success">  RECOMMENDED: NEW REGIME (saves ₹42,811)</p>
-            <p class="dim">  Deterministic math verified against s.87A marginal relief.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Test Receipts Banner -->
-      <div class="container">
-        <div class="stats-strip">
-          <div class="stat-item">
-            <div class="stat-num">51</div>
-            <div class="stat-label">Golden Statutory Tests</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">104</div>
-            <div class="stat-label">Schema Validator Tests</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">50</div>
-            <div class="stat-label">Document Extraction Tests</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">350K+</div>
-            <div class="stat-label">Fuzzed Invariant Cycles</div>
+          <div class="terminal-content">
+            <p><span class="t-prompt">taxsarthi@box:~$</span> <span class="t-cmd">taxsarthi compute income.json</span></p>
+            <p class="t-dim">Income-tax computation for FY 2025-26 (AY 2026-27)</p>
+            <p class="t-dim">----------------------------------------------------</p>
+            <p><span class="t-gold">[NEW REGIME]</span></p>
+            <p>  Gross total income <span class="t-num" style="float:right;">26,06,700</span></p>
+            <p>  Standard Deduction <span class="t-num" style="float:right;">75,000</span></p>
+            <p>  Tax on slab income <span class="t-num" style="float:right;">2,75,425</span></p>
+            <p>  111A STCG (equity 20%) <span class="t-num" style="float:right;">9,000</span></p>
+            <p>  112A LTCG (equity 12.5%) <span class="t-num" style="float:right;">4,375</span></p>
+            <p>  Health &amp; Education Cess (4%) <span class="t-num" style="float:right;">11,552</span></p>
+            <p>  TOTAL TAX <span class="t-emerald" style="float:right;">₹3,00,350</span></p>
+            <p>  NET PAYABLE (-ve=refund) <span class="t-num" style="float:right;">₹720</span></p>
+            <p class="t-dim">----------------------------------------------------</p>
+            <p class="t-emerald">  RECOMMENDED: NEW REGIME (saves ₹42,811)</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Architecture & Three-Layer Split -->
-    <section id="architecture">
+      <!-- Metrics & Invariants Strip -->
       <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Architecture</span>
-          <h2 class="section-title">Zero-Hallucination Design</h2>
-          <p class="section-desc">Why TaxSarthi never lets an LLM perform tax math</p>
-        </div>
-
-        <div style="text-align: center; margin-bottom: 40px;">
-          <img src="assets/hero-flow.svg" alt="TaxSarthi Architecture Flow" style="max-width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--border);">
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Tax Studio -->
-    <section id="studio" style="background: rgba(0,0,0,0.15);">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Tax Studio</span>
-          <h2 class="section-title">Interactive Tax Calculator &amp; Comparator</h2>
-          <p class="section-desc">Test real-world scenarios across Old vs New tax regimes for AY 2026-27 in real time.</p>
-          
-          <div style="margin-top: 18px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-            <button onclick="loadPreset('salaried')" class="btn-secondary" style="font-size: 0.85rem;">Preset: Salaried Tech Worker</button>
-            <button onclick="loadPreset('freelancer')" class="btn-secondary" style="font-size: 0.85rem;">Preset: 44ADA Consultant + Stocks</button>
-            <button onclick="loadPreset('senior')" class="btn-secondary" style="font-size: 0.85rem;">Preset: Senior Citizen (FD + Gains)</button>
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <div class="metric-val">51 <span class="suffix">tests</span></div>
+            <div class="metric-name">Hand-Derived Golden Cases</div>
           </div>
-        </div>
-
-        <div class="studio-container">
-          <!-- Inputs Column -->
-          <div class="card">
-            <div class="tabs-nav">
-              <button class="tab-btn active" data-tab="tab-salary">💼 Salary &amp; Business</button>
-              <button class="tab-btn" data-tab="tab-gains">📈 Capital Gains</button>
-              <button class="tab-btn" data-tab="tab-deductions">🛡️ Deductions (Old)</button>
-              <button class="tab-btn" data-tab="tab-taxes">💳 Taxes Paid</button>
-            </div>
-
-            <!-- Tab: Salary & Business -->
-            <div id="tab-salary" class="tab-pane">
-              <div class="form-group">
-                <label class="form-label" for="inp-salary">Gross Salary (Form 16 Part B) <small>₹</small></label>
-                <input type="number" id="inp-salary" class="form-control" value="2500000" placeholder="e.g. 25,00,000">
-              </div>
-
-              <div class="grid-2">
-                <div class="form-group">
-                  <label class="form-label" for="inp-hra">HRA Exemption Claimed <small>Old regime only</small></label>
-                  <input type="number" id="inp-hra" class="form-control" value="180000" placeholder="e.g. 1,80,000">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="inp-freelance">Freelance Gross (u/s 44ADA) <small>50% deemed</small></label>
-                  <input type="number" id="inp-freelance" class="form-control" value="0" placeholder="e.g. 10,00,000">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="inp-interest">Interest &amp; Other Sources <small>Savings + FD + Dividends</small></label>
-                <input type="number" id="inp-interest" class="form-control" value="22000" placeholder="e.g. 25,000">
-              </div>
-            </div>
-
-            <!-- Tab: Capital Gains -->
-            <div id="tab-gains" class="tab-pane" style="display: none;">
-              <div class="grid-2">
-                <div class="form-group">
-                  <label class="form-label" for="inp-stcg">Equity STCG (u/s 111A) <small>Taxed @ 20%</small></label>
-                  <input type="number" id="inp-stcg" class="form-control" value="45000" placeholder="e.g. 45,000">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="inp-ltcg">Equity LTCG (u/s 112A) <small>12.5% above ₹1.25L</small></label>
-                  <input type="number" id="inp-ltcg" class="form-control" value="160000" placeholder="e.g. 1,60,000">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="inp-crypto">VDA / Crypto Gains <small>Flat 30% (no set-off)</small></label>
-                <input type="number" id="inp-crypto" class="form-control" value="0" placeholder="e.g. 50,000">
-              </div>
-            </div>
-
-            <!-- Tab: Deductions -->
-            <div id="tab-deductions" class="tab-pane" style="display: none;">
-              <div class="grid-2">
-                <div class="form-group">
-                  <label class="form-label" for="inp-80c">Section 80C <small>EPF, PPF, ELSS (Max 1.5L)</small></label>
-                  <input type="number" id="inp-80c" class="form-control" value="150000" placeholder="150000">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="inp-80d">Section 80D <small>Mediclaim (Self + Parents)</small></label>
-                  <input type="number" id="inp-80d" class="form-control" value="35000" placeholder="35000">
-                </div>
-              </div>
-
-              <div class="grid-2">
-                <div class="form-group">
-                  <label class="form-label" for="inp-nps">80CCD(1B) NPS <small>Additional 50k</small></label>
-                  <input type="number" id="inp-nps" class="form-control" value="50000" placeholder="50000">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="inp-homeloan">24(b) Home Loan Interest <small>Self-occupied (Max 2L)</small></label>
-                  <input type="number" id="inp-homeloan" class="form-control" value="0" placeholder="0">
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab: Taxes Paid -->
-            <div id="tab-taxes" class="tab-pane" style="display: none;">
-              <div class="grid-2">
-                <div class="form-group">
-                  <label class="form-label" for="inp-tds">TDS Paid (Form 16 + 26AS) <small>₹</small></label>
-                  <input type="number" id="inp-tds" class="form-control" value="280000" placeholder="280000">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="inp-advtax">Advance Tax / Self-Assessment <small>Challans</small></label>
-                  <input type="number" id="inp-advtax" class="form-control" value="0" placeholder="0">
-                </div>
-              </div>
-            </div>
-
-            <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-              <span class="mono" style="font-size: 0.8rem; color: var(--text-dim);">Live Statutory Computation</span>
-              <button onclick="exportComputationJSON()" class="btn-secondary" style="font-size: 0.85rem;">📥 Export Computation JSON</button>
-            </div>
+          <div class="metric-box">
+            <div class="metric-val">104 <span class="suffix">rules</span></div>
+            <div class="metric-name">Schema &amp; PII Guard Gates</div>
           </div>
-
-          <!-- Comparison Display Column -->
-          <div class="card">
-            <div class="recommendation-banner">
-              <div>
-                <div class="rec-title" id="res-winner-regime">NEW REGIME RECOMMENDED</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Optimal choice for AY 2026-27</div>
-              </div>
-              <div class="rec-savings" id="res-winner-savings">Saves ₹42,811</div>
-            </div>
-
-            <div class="regimes-grid">
-              <!-- New Regime Card -->
-              <div class="regime-box winner" id="regime-new-box">
-                <div class="winner-tag">DEFAULT</div>
-                <div class="regime-name">New Regime</div>
-                <div class="calc-row"><span>Gross Total:</span> <span class="mono" id="val-new-gross">₹26,06,700</span></div>
-                <div class="calc-row"><span>Std Deduction:</span> <span class="mono">-₹75,000</span></div>
-                <div class="calc-row"><span>Taxable Income:</span> <span class="mono" id="val-new-taxable">₹25,06,700</span></div>
-                <div class="calc-row"><span>Slab Tax:</span> <span class="mono" id="val-new-slabtax">₹2,75,425</span></div>
-                <div class="calc-row"><span>87A Rebate:</span> <span class="mono" id="val-new-rebate">-₹0</span></div>
-                <div class="calc-row"><span>Special Rates:</span> <span class="mono" id="val-new-special">₹13,375</span></div>
-                <div class="calc-row"><span>Cess (4%):</span> <span class="mono" id="val-new-cess">₹11,552</span></div>
-                <div class="calc-row total"><span>Total Tax:</span> <span class="mono" id="val-new-totaltax">₹3,00,350</span></div>
-                <div class="calc-row" style="font-weight:700; margin-top:6px;"><span>Net Payable/Refund:</span> <span class="mono" id="val-new-netpayable">₹720</span></div>
-              </div>
-
-              <!-- Old Regime Card -->
-              <div class="regime-box" id="regime-old-box">
-                <div class="regime-name">Old Regime</div>
-                <div class="calc-row"><span>Gross Total:</span> <span class="mono" id="val-old-gross">₹26,06,700</span></div>
-                <div class="calc-row"><span>Deductions:</span> <span class="mono" id="val-old-deductions">-₹4,65,000</span></div>
-                <div class="calc-row"><span>Taxable Income:</span> <span class="mono" id="val-old-taxable">₹21,41,700</span></div>
-                <div class="calc-row"><span>Slab Tax:</span> <span class="mono" id="val-old-slabtax">₹4,55,010</span></div>
-                <div class="calc-row"><span>87A Rebate:</span> <span class="mono" id="val-old-rebate">-₹0</span></div>
-                <div class="calc-row"><span>Special Rates:</span> <span class="mono" id="val-old-special">₹13,375</span></div>
-                <div class="calc-row"><span>Cess (4%):</span> <span class="mono" id="val-old-cess">₹18,735</span></div>
-                <div class="calc-row total"><span>Total Tax:</span> <span class="mono" id="val-old-totaltax">₹4,87,120</span></div>
-                <div class="calc-row" style="font-weight:700; margin-top:6px;"><span>Net Payable/Refund:</span> <span class="mono" id="val-old-netpayable">₹2,07,120</span></div>
-              </div>
-            </div>
-
-            <div style="font-size: 0.8rem; color: var(--text-dim); line-height: 1.5;">
-              💡 <em>Section 87A rebate of up to ₹60,000 applies for taxable slab income up to ₹12,00,000 under the New Regime, with statutory marginal relief up to ₹12,75,000.</em>
-            </div>
+          <div class="metric-box">
+            <div class="metric-val">50 <span class="suffix">checks</span></div>
+            <div class="metric-name">AIS &amp; 26AS Extraction Tests</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">350K+ <span class="suffix">runs</span></div>
+            <div class="metric-name">Fuzzed Statutory Invariants</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portal Filing Walkthrough -->
-    <section id="portal">
+    <!-- Interactive Tax Studio (Centerpiece) -->
+    <section id="studio">
       <div class="container">
-        <div class="section-head">
+        <div class="section-header">
+          <span class="section-tag">Interactive Studio</span>
+          <h2 class="section-title">Live Tax Computation &amp; Regime Comparator</h2>
+          <p class="section-desc">Test real-world financial scenarios across Old and New tax regimes with instant statutory feedback.</p>
+        </div>
+
+        <div class="studio-card">
+          <!-- Preset Selector -->
+          <div class="preset-bar">
+            <span class="preset-label">Scenarios:</span>
+            <button class="preset-pill active" onclick="setStudioPreset('salaried', this)">💼 Salaried (₹24L + Deductions)</button>
+            <button class="preset-pill" onclick="setStudioPreset('freelancer', this)">💻 Freelancer (44ADA + Equities)</button>
+            <button class="preset-pill" onclick="setStudioPreset('senior', this)">👴 Senior Citizen (FD + Gains)</button>
+          </div>
+
+          <div class="studio-grid">
+            <!-- Left: Inputs Console -->
+            <div>
+              <div class="segmented-nav">
+                <button class="nav-segment active" data-target="pane-salary">Salary &amp; Income</button>
+                <button class="nav-segment" data-target="pane-gains">Capital Gains</button>
+                <button class="nav-segment" data-target="pane-deductions">Deductions</button>
+                <button class="nav-segment" data-target="pane-taxes">Taxes Paid</button>
+              </div>
+
+              <!-- Tab 1: Salary & Income -->
+              <div id="pane-salary" class="tab-content-pane">
+                <div class="input-group">
+                  <div class="input-label">
+                    <span>Gross Salary (Form 16)</span>
+                    <span class="note">Std. Ded. ₹75k (New) / ₹50k (Old)</span>
+                  </div>
+                  <div class="input-wrapper">
+                    <span class="currency-prefix">₹</span>
+                    <input type="number" id="inp-salary" class="input-field" value="2400000">
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>HRA Exemption</span>
+                      <span class="note">Old regime only</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-hra" class="input-field" value="0">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Freelance Receipts (44ADA)</span>
+                      <span class="note">50% deemed taxable</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-freelance" class="input-field" value="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <div class="input-label">
+                    <span>Interest &amp; Other Sources</span>
+                    <span class="note">Savings + FD + Dividends</span>
+                  </div>
+                  <div class="input-wrapper">
+                    <span class="currency-prefix">₹</span>
+                    <input type="number" id="inp-interest" class="input-field" value="76700">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 2: Capital Gains -->
+              <div id="pane-gains" class="tab-content-pane" style="display: none;">
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Equity STCG (111A)</span>
+                      <span class="note">Flat 20%</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-stcg" class="input-field" value="45000">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Equity LTCG (112A)</span>
+                      <span class="note">12.5% above ₹1.25L</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-ltcg" class="input-field" value="160000">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <div class="input-label">
+                    <span>VDA / Crypto Gains</span>
+                    <span class="note">Flat 30% (no loss set-off)</span>
+                  </div>
+                  <div class="input-wrapper">
+                    <span class="currency-prefix">₹</span>
+                    <input type="number" id="inp-crypto" class="input-field" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 3: Deductions -->
+              <div id="pane-deductions" class="tab-content-pane" style="display: none;">
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Section 80C</span>
+                      <span class="note">EPF, PPF, ELSS (Max 1.5L)</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-80c" class="input-field" value="150000">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Section 80D</span>
+                      <span class="note">Mediclaim (Self + Parents)</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-80d" class="input-field" value="25000">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>80CCD(1B) NPS</span>
+                      <span class="note">Additional ₹50k</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-nps" class="input-field" value="50000">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>24(b) Home Loan Interest</span>
+                      <span class="note">Self-occupied (Max 2L)</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-homeloan" class="input-field" value="180000">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 4: Taxes Paid -->
+              <div id="pane-taxes" class="tab-content-pane" style="display: none;">
+                <div class="input-row">
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>TDS Claimed</span>
+                      <span class="note">Form 16 + 26AS Total</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-tds" class="input-field" value="280000">
+                    </div>
+                  </div>
+
+                  <div class="input-group">
+                    <div class="input-label">
+                      <span>Advance Tax / Self Assessment</span>
+                      <span class="note">Paid via challans</span>
+                    </div>
+                    <div class="input-wrapper">
+                      <span class="currency-prefix">₹</span>
+                      <input type="number" id="inp-advtax" class="input-field" value="20000">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Real-time Verdict & Ledger -->
+            <div>
+              <div class="verdict-banner">
+                <div>
+                  <div class="verdict-tag" id="verdict-tag">New Regime Recommended</div>
+                  <div class="verdict-sub">Statutory optimal choice for AY 2026-27</div>
+                </div>
+                <div class="verdict-savings" id="verdict-savings">₹42,811 Saved</div>
+              </div>
+
+              <div class="regimes-comparison-grid">
+                <!-- New Regime Ledger -->
+                <div class="regime-column winner" id="col-new">
+                  <div class="regime-badge">DEFAULT</div>
+                  <div class="regime-heading">New Regime</div>
+                  <div class="ledger-row"><span class="label">Gross Total:</span> <span class="val" id="val-new-gross">₹26,06,700</span></div>
+                  <div class="ledger-row"><span class="label">Std. Deduction:</span> <span class="val">-₹75,000</span></div>
+                  <div class="ledger-row"><span class="label">Taxable Slab Income:</span> <span class="val" id="val-new-taxable">₹25,06,700</span></div>
+                  <div class="ledger-row"><span class="label">Tax on Slabs:</span> <span class="val" id="val-new-slabtax">₹2,75,425</span></div>
+                  <div class="ledger-row"><span class="label">87A Rebate:</span> <span class="val" id="val-new-rebate">-₹0</span></div>
+                  <div class="ledger-row"><span class="label">Special Taxes (CG):</span> <span class="val" id="val-new-special">₹13,375</span></div>
+                  <div class="ledger-row"><span class="label">Cess (4%):</span> <span class="val" id="val-new-cess">₹11,552</span></div>
+                  <div class="ledger-row total"><span class="label">Total Tax Liability:</span> <span class="val" id="val-new-totaltax">₹3,00,350</span></div>
+                  <div class="ledger-row payable"><span class="label">Net Payable / Refund:</span> <span class="val" id="val-new-payable">₹720</span></div>
+                </div>
+
+                <!-- Old Regime Ledger -->
+                <div class="regime-column" id="col-old">
+                  <div class="regime-heading">Old Regime</div>
+                  <div class="ledger-row"><span class="label">Gross Total:</span> <span class="val" id="val-old-gross">₹26,06,700</span></div>
+                  <div class="ledger-row"><span class="label">Total Deductions:</span> <span class="val" id="val-old-deductions">-₹4,65,000</span></div>
+                  <div class="ledger-row"><span class="label">Taxable Slab Income:</span> <span class="val" id="val-old-taxable">₹21,41,700</span></div>
+                  <div class="ledger-row"><span class="label">Tax on Slabs:</span> <span class="val" id="val-old-slabtax">₹4,55,010</span></div>
+                  <div class="ledger-row"><span class="label">87A Rebate:</span> <span class="val" id="val-old-rebate">-₹0</span></div>
+                  <div class="ledger-row"><span class="label">Special Taxes (CG):</span> <span class="val" id="val-old-special">₹13,375</span></div>
+                  <div class="ledger-row"><span class="label">Cess (4%):</span> <span class="val" id="val-old-cess">₹18,735</span></div>
+                  <div class="ledger-row total"><span class="label">Total Tax Liability:</span> <span class="val" id="val-old-totaltax">₹4,87,120</span></div>
+                  <div class="ledger-row payable"><span class="label">Net Payable / Refund:</span> <span class="val" id="val-old-payable">₹2,07,120</span></div>
+                </div>
+              </div>
+
+              <div class="studio-action-strip">
+                <span class="mono" style="font-size: 0.76rem; color: var(--text-tertiary);">Deterministic Engine Core v1.0.0</span>
+                <button onclick="downloadFilingPackJSON()" class="btn-cta" style="font-size: 0.8rem; padding: 7px 14px;">
+                  📥 Download Filing Pack JSON
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & Blind Extraction Sandbox -->
+    <section id="redactor" style="background: rgba(0, 0, 0, 0.15);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Zero-Knowledge Extraction</span>
+          <h2 class="section-title">Built-In PII Redaction &amp; Privacy Shield</h2>
+          <p class="section-desc">How TaxSarthi extracts tax figures from AIS and Form 16 without exposing identity credentials.</p>
+        </div>
+
+        <div class="redactor-box">
+          <div class="redactor-grid">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary);">
+                1. Raw Structured AIS JSON / Form 16 Text
+              </div>
+              <div class="code-preview-pane">
+{
+  "financialYear": "2025-26",
+  "assessmentYear": "2026-27",
+  "taxpayer": {
+    "pan": "ABCDE1234F",
+    "aadhaar": "987654321098",
+    "bankAccount": "50100234567890"
+  },
+  "salaryDetails": {
+    "grossSalary": 2400000,
+    "tdsDeducted": 265000
+  }
+}
+              </div>
+            </div>
+
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; color: var(--brand-emerald);">
+                2. Client-Side Sanitized Extraction (Zero Credentials Stored)
+              </div>
+              <div class="code-preview-pane">
+{
+  "income": {
+    "salary": {
+      "gross": 2400000
+    }
+  },
+  "taxes_paid": {
+    "tds": 265000
+  },
+  "scrubbed_identities": {
+    "pan": <span class="redacted-tag">[REDACTED_PAN]</span>,
+    "aadhaar": <span class="redacted-tag">[REDACTED_AADHAAR]</span>,
+    "account": <span class="redacted-tag">[REDACTED_ACCOUNT]</span>
+  }
+}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITR Form Decision Wizard -->
+    <section id="wizard">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Decision Tree</span>
+          <h2 class="section-title">Which ITR Form Should You File?</h2>
+          <p class="section-desc">Answer 3 simple questions to determine the exact form required by the Income Tax Department.</p>
+        </div>
+
+        <div class="wizard-card">
+          <div class="wizard-question">
+            <div class="wizard-title">1. What are your primary income sources?</div>
+            <div class="option-pill-group">
+              <button class="wizard-option selected" onclick="selectWizardOption('incomeType', 'salary', this)">Salary / Pension + 1 House Property</button>
+              <button class="wizard-option" onclick="selectWizardOption('incomeType', 'multiple_hp', this)">Multiple Properties / Capital Gains</button>
+            </div>
+          </div>
+
+          <div class="wizard-question">
+            <div class="wizard-title">2. Did you sell equities, mutual funds, crypto, or real estate this year?</div>
+            <div class="option-pill-group">
+              <button class="wizard-option selected" onclick="selectWizardOption('hasCapitalGains', 'no', this)">No Capital Gains</button>
+              <button class="wizard-option" onclick="selectWizardOption('hasCapitalGains', 'yes', this)">Yes, have STCG / LTCG / VDA</button>
+            </div>
+          </div>
+
+          <div class="wizard-question">
+            <div class="wizard-title">3. Do you have freelance, consulting, or business income?</div>
+            <div class="option-pill-group">
+              <button class="wizard-option selected" onclick="selectWizardOption('hasBusiness', 'no', this)">No Business Income</button>
+              <button class="wizard-option" onclick="selectWizardOption('hasBusiness', 'presumptive', this)">Yes, Presumptive (u/s 44AD / 44ADA)</button>
+              <button class="wizard-option" onclick="selectWizardOption('hasBusiness', 'full', this)">Yes, Full Business Accounts (P&amp;L)</button>
+            </div>
+          </div>
+
+          <div class="wizard-result-box">
+            <div>
+              <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-tertiary);">Recommended ITR Form:</div>
+              <div id="wizard-form-result" style="font-size: 1.35rem; font-weight: 800; color: var(--brand-teal-light); margin-top: 4px;">ITR-1 (Sahaj)</div>
+              <div id="wizard-form-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">Salaried individuals with income up to ₹50 Lakhs and no capital gains.</div>
+            </div>
+            <a href="#portal" class="btn-ghost" style="font-size: 0.82rem;">View Schedule Guide →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule by Schedule Guide -->
+    <section id="portal" style="background: rgba(0, 0, 0, 0.15);">
+      <div class="container">
+        <div class="section-header">
           <span class="section-tag">E-Filing Portal</span>
-          <h2 class="section-title">Schedule-by-Schedule Filing Guide</h2>
-          <p class="section-desc">How TaxSarthi navigates the official incometax.gov.in portal alongside you</p>
+          <h2 class="section-title">Schedule-by-Schedule Portal Navigation</h2>
+          <p class="section-desc">Follow TaxSarthi's exact sequence on incometax.gov.in</p>
         </div>
 
-        <div style="max-width: 800px; margin: 0 auto;">
-          <div class="schedule-item">
-            <div class="schedule-head">
+        <div class="accordion-list">
+          <div class="accordion-item open">
+            <button class="accordion-trigger">
               <span>1. Schedule Salary (Form 16 Part B)</span>
-              <span class="mono" style="color: var(--teal-500);">ITR-1 / ITR-2</span>
-            </div>
-            <div class="schedule-body">
-              Transcribe Gross Salary (s.17(1)), Perquisites (s.17(2)), and Standard Deduction (₹75k New / ₹50k Old). Professional tax is entered under s.16(iii).
+              <span class="mono" style="font-size: 0.8rem; color: var(--brand-teal);">Section 17(1)</span>
+            </button>
+            <div class="accordion-content">
+              Enter Gross Salary under section 17(1), Perquisites under section 17(2), and Profits in lieu of salary under section 17(3). The statutory Standard Deduction of ₹75,000 (New Regime) or ₹50,000 (Old Regime) is deducted automatically. Professional tax is claimed under section 16(iii).
             </div>
           </div>
 
-          <div class="schedule-item">
-            <div class="schedule-head">
+          <div class="accordion-item">
+            <button class="accordion-trigger">
               <span>2. Schedule Capital Gains (Schedule CG)</span>
-              <span class="mono" style="color: var(--teal-500);">ITR-2 / ITR-3</span>
-            </div>
-            <div class="schedule-body">
-              Section 111A equity STCG @ 20% and Section 112A equity LTCG @ 12.5% with the aggregate ₹1,25,000 statutory exemption applied automatically.
-            </div>
-          </div>
-
-          <div class="schedule-item">
-            <div class="schedule-head">
-              <span>3. Schedule VI-A Deductions &amp; Taxes Paid (Schedule TDS)</span>
-              <span class="mono" style="color: var(--teal-500);">All Forms</span>
-            </div>
-            <div class="schedule-body">
-              Cross-check claimed TDS against 26AS TAN entries and AIS totals to prevent automated intimation mismatches u/s 143(1).
+              <span class="mono" style="font-size: 0.8rem; color: var(--brand-teal);">111A &amp; 112A</span>
+            </button>
+            <div class="accordion-content">
+              Enter Equity STCG under Section 111A (taxed at 20%) and Equity LTCG under Section 112A (taxed at 12.5% on gains exceeding the ₹1,25,000 exemption). TaxSarthi cross-checks your aggregate broker Tax P&amp;L against AIS SFT codes.
             </div>
           </div>
 
-          <div class="schedule-item">
-            <div class="schedule-head">
-              <span>4. Part B-TTI &amp; Final Verification</span>
-              <span class="mono" style="color: var(--teal-500);">The 3 Final Acts</span>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>3. Schedule Other Sources (Schedule OS)</span>
+              <span class="mono" style="font-size: 0.8rem; color: var(--brand-teal);">Section 56(2)</span>
+            </button>
+            <div class="accordion-content">
+              Declare Savings bank interest, Fixed Deposit interest, Dividend receipts, and VDA/crypto earnings. VDA gains are reported in Schedule VDA and taxed at a flat 30% without deduction or loss set-off.
             </div>
-            <div class="schedule-body">
-              Match the portal's computed tax to TaxSarthi's output to the exact rupee. You alone perform the final three actions: <strong>Pay, Submit, and e-Verify</strong>.
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>4. Part B-TTI &amp; Verification</span>
+              <span class="mono" style="font-size: 0.8rem; color: var(--brand-emerald);">The Final 3 Acts</span>
+            </button>
+            <div class="accordion-content">
+              Reconcile the portal's computed final tax liability against TaxSarthi's calculation pack. The final three actions belong strictly to you: <strong>Pay, Submit, and e-Verify</strong>.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CLI & Agents Setup -->
-    <section id="cli" style="background: rgba(0,0,0,0.15);">
+    <!-- Multi-Agent Integration & Installation -->
+    <section id="cli">
       <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Integration</span>
-          <h2 class="section-title">Install TaxSarthi Across Any Platform</h2>
-          <p class="section-desc">Run as a CLI tool or plug into Antigravity, Claude Code, or OpenAI Codex</p>
+        <div class="section-header">
+          <span class="section-tag">Developer &amp; Agent Tooling</span>
+          <h2 class="section-title">One Tool, Everywhere You Work</h2>
+          <p class="section-desc">Run TaxSarthi natively across your terminal, Python environment, or favorite AI agent.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-          <!-- Card 1: Review-first Install -->
-          <div class="card">
-            <h3 class="card-title">📦 Universal Installer</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
-              Clone and review locally, then install into your preferred agent without touching the network:
-            </p>
-            <div style="background: #081214; padding: 12px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8; overflow-x: auto;">
-              git clone https://github.com/karanb192/itr-wala.git<br>
-              cd itr-wala &amp;&amp; ./install.sh all
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div class="metric-box">
+            <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;">Claude Code Plugin</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Install directly from marketplace inside your Claude terminal session.</p>
+            <div class="code-preview-pane" style="height: 100px;">
+/plugin marketplace add karanb192/itr-wala
+/plugin install taxsarthi@taxsarthi
             </div>
           </div>
 
-          <!-- Card 2: Claude Code Plugin -->
-          <div class="card">
-            <h3 class="card-title">🤖 Claude Code Plugin</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
-              Install TaxSarthi directly as a native Claude Code plugin:
-            </p>
-            <div style="background: #081214; padding: 12px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.8rem; color: #34d399; overflow-x: auto;">
-              /plugin marketplace add karanb192/itr-wala<br>
-              /plugin install taxsarthi@taxsarthi
+          <div class="metric-box">
+            <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;">Antigravity / Gemini CLI</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Install the agent skill into your local workspace or global agent root.</p>
+            <div class="code-preview-pane" style="height: 100px;">
+./install.sh gemini
+# Or project-local:
+./install.sh --here
             </div>
           </div>
 
-          <!-- Card 3: Local Python CLI -->
-          <div class="card">
-            <h3 class="card-title">🐍 Python CLI Tool</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
-              Install and run the high-performance command line package:
-            </p>
-            <div style="background: #081214; padding: 12px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.8rem; color: #fbbf24; overflow-x: auto;">
-              pip install -e .<br>
-              taxsarthi compute income.json
+          <div class="metric-box">
+            <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;">Python CLI &amp; Library</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Install standard package for CLI commands and deterministic execution.</p>
+            <div class="code-preview-pane" style="height: 100px;">
+pip install -e .
+taxsarthi compute income.json
+taxsarthi selftest
             </div>
           </div>
         </div>
@@ -436,39 +598,37 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a href="#" class="logo-link">
-            <img src="assets/logo-white.svg" alt="TaxSarthi Logo" style="height: 32px;">
-          </a>
-          <p class="footer-desc">
-            TaxSarthi is an independent, open-source Indian Income Tax computation engine and AI co-pilot designed with mathematical rigor.
+      <div class="footer-columns">
+        <div class="footer-about">
+          <img src="assets/logo-white.svg" alt="TaxSarthi Logo" style="height: 32px;" id="footer-logo">
+          <p>
+            TaxSarthi is an independent, open-source Indian Income Tax computation engine &amp; AI co-pilot designed with mathematical rigor.
           </p>
         </div>
 
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul class="footer-links">
+        <div>
+          <div class="footer-heading">Product</div>
+          <ul class="footer-nav">
             <li><a href="#studio">Tax Studio</a></li>
-            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#redactor">PII Redactor</a></li>
+            <li><a href="#wizard">Form Selector</a></li>
             <li><a href="#portal">Portal Guide</a></li>
-            <li><a href="#cli">CLI &amp; Agents</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h4>AY 2026-27 Rates</h4>
-          <ul class="footer-links">
-            <li><a href="#">New Regime Slabs</a></li>
-            <li><a href="#">Section 87A Rebate</a></li>
-            <li><a href="#">111A / 112A Capital Gains</a></li>
-            <li><a href="#">234A/B/C Interest Math</a></li>
+        <div>
+          <div class="footer-heading">Statute (AY 2026-27)</div>
+          <ul class="footer-nav">
+            <li><a href="#studio">New Regime (115BAC)</a></li>
+            <li><a href="#studio">Section 87A Rebate</a></li>
+            <li><a href="#studio">Section 111A / 112A</a></li>
+            <li><a href="#studio">Interest u/s 234A/B/C</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h4>Open Source</h4>
-          <ul class="footer-links">
+        <div>
+          <div class="footer-heading">Open Source</div>
+          <ul class="footer-nav">
             <li><a href="https://github.com/karanb192/itr-wala" target="_blank">GitHub Repository</a></li>
             <li><a href="https://github.com/karanb192/itr-wala/blob/main/LICENSE" target="_blank">MIT License</a></li>
             <li><a href="https://github.com/karanb192/itr-wala/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></li>
@@ -476,13 +636,12 @@
         </div>
       </div>
 
-      <!-- Legal Disclaimer -->
-      <div class="disclaimer-box">
-        <strong>Statutory Notice &amp; Legal Disclaimer:</strong> TaxSarthi is an open-source software tool, not a chartered accountant or registered tax return preparer, and does not provide formal legal or financial advice. All tax liabilities, deductions, and exemptions are computed deterministically based on published Indian Income-tax Act provisions for AY 2026-27 (FY 2025-26). Responsibility for final return filing, payment, and e-verification remains solely with the individual filer.
+      <div class="legal-notice-box">
+        <strong>Statutory Notice &amp; Legal Disclaimer:</strong> TaxSarthi is an open-source software project, not a chartered accountant or registered tax return preparer, and does not provide formal legal or financial advice. All tax liabilities, deductions, and exemptions are computed deterministically based on published Indian Income-tax Act provisions for AY 2026-27 (FY 2025-26). Final filing, payment, and e-verification remain solely the legal responsibility of the individual taxpayer.
       </div>
 
-      <div class="copyright">
-        © 2026 TaxSarthi Contributors. Released under the MIT License. Reference material adapted from file-itr and original foundation by Karan Bansal.
+      <div class="copyright-text">
+        © 2026 TaxSarthi Contributors. Released under the MIT License. Original math engine foundation copyright © 2026 Karan Bansal. Reference material adapted from file-itr.
       </div>
     </div>
   </footer>
