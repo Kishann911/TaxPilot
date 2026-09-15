@@ -1,0 +1,7 @@
+# Automation local ignores
+.env
+workspace/*
+!workspace/.gitkeep
+*.log
+__pycache__/
+*.pyc
