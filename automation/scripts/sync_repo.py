@@ -76,7 +76,8 @@ def main():
     user_name = os.environ.get("GIT_USER_NAME", "TaxSarthi Automation")
     user_email = os.environ.get("GIT_USER_EMAIL", "automation@taxsarthi.local")
     dry_run = os.environ.get("DRY_RUN", "true").lower() in ("true", "1", "yes")
-    workspace_dir = os.environ.get("WORKSPACE_DIR", "/automation/workspace")
+    default_ws = "/automation/workspace" if os.path.exists("/automation") else os.path.join(os.getcwd(), "automation", "workspace")
+    workspace_dir = os.environ.get("WORKSPACE_DIR", default_ws)
 
     log(f"Target Repository: {target_repo}")
     log(f"Target Branch: {target_branch}")

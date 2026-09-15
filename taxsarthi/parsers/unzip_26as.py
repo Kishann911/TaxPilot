@@ -62,11 +62,18 @@ def main(argv):
         print(f"Not encrypted. Extracted {len(names)} file(s) to {outdir}")
         return 0
 
-    print(f"Archive: {src.name}  ({len(names)} file(s), ZipCrypto)")
-    print("PAN and DOB are hidden as you type and are never stored.\n")
+    def read_secret(prompt):
+        if sys.stdin.isatty():
+            try:
+                return getpass.getpass(prompt).strip()
+            except Exception:
+                pass
+        print(prompt, end="", flush=True)
+        line = sys.stdin.readline()
+        return line.strip() if line else ""
 
-    pan = getpass.getpass("PAN (10 chars, hidden): ").strip()
-    dob = getpass.getpass("DOB as DDMMYYYY (hidden): ").strip()
+    pan = read_secret("PAN (10 chars, hidden): ").strip()
+    dob = read_secret("DOB as DDMMYYYY (hidden): ").strip()
 
     if not re.fullmatch(r"[A-Za-z]{5}[0-9]{4}[A-Za-z]", pan):
         print("\nThat PAN is not in the expected AAAAA9999A shape.",
