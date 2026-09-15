@@ -1,0 +1,45 @@
+# Never commit anyone's tax documents or generated filings
+taxsarthi-workspace/
+itr-wala-workspace/
+*AIS*
+*26AS*
+*Form16*
+*form16*
+*TIS*
+*Challan*
+*ACK*
+*.ack
+income.json
+computation.json
+computation.txt
+filing-pack.md
+
+# Re-include skill & source code explicitly
+!skills/**/*.py
+!skills/**/*.md
+!taxsarthi/**/*.py
+
+# Python builds & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment files & secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Automation workspace artifacts
+automation/workspace/*
+!automation/workspace/.gitkeep
+
+# OS / Editor noise
+.DS_Store
+.vscode/
+.idea/
+*.swp
