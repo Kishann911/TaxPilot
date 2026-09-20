@@ -8,12 +8,20 @@ itr-wala-workspace/
 *form16*
 *TIS*
 *Challan*
-*ACK*
+*-ACK.*
+*-ack.*
+*ITR-V*
 *.ack
+*.ack.pdf
 income.json
 computation.json
 computation.txt
 filing-pack.md
+
+# Ensure critical project & configuration files are never ignored
+!package.json
+!package-lock.json
+!docs/**/*.md
 
 # Re-include skill & source code explicitly
 !skills/**/*.py
