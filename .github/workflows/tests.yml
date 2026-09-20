@@ -24,22 +24,22 @@ jobs:
           pip install -e .
       
       - name: Run Golden Test Suite (51 Cases)
-        run: python3 skills/taxsarthi/scripts/test_tax_engine.py
+        run: python3 skills/taxpilot/scripts/test_tax_engine.py
       
       - name: Run Input Validator Test Suite (104 Cases)
-        run: python3 skills/taxsarthi/scripts/test_validate_income.py
+        run: python3 skills/taxpilot/scripts/test_validate_income.py
       
       - name: Run Extraction Tooling Test Suite (50 Cases)
-        run: python3 skills/taxsarthi/scripts/test_extraction.py
+        run: python3 skills/taxpilot/scripts/test_extraction.py
       
       - name: Run Deterministic Property Fuzzer (3,000 Cases)
-        run: python3 -m taxsarthi.cli.main fuzz --cases 3000 --seed 42
+        run: python3 -m taxpilot.cli.main fuzz --cases 3000 --seed 42
       
       - name: Validate Example Income JSON & TaxPilot CLI
         run: |
-          python3 -m taxsarthi.cli.main validate skills/taxsarthi/assets/example-income.json
-          python3 -m taxsarthi.cli.main compute skills/taxsarthi/assets/example-income.json > /dev/null
-          python3 -m taxsarthi.cli.main selftest
+          python3 -m taxpilot.cli.main validate skills/taxpilot/assets/example-income.json
+          python3 -m taxpilot.cli.main compute skills/taxpilot/assets/example-income.json > /dev/null
+          python3 -m taxpilot.cli.main selftest
 
   nextjs-verification:
     runs-on: ubuntu-latest

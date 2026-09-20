@@ -13,12 +13,12 @@ case "$ACTION" in
     python3 /automation/scripts/sync_repo.py
     ;;
   test)
-    echo "Running TaxSarthi Test Suite inside container..."
-    python3 -m taxsarthi.cli.main selftest
+    echo "Running TaxPilot Test Suite inside container..."
+    python3 -m taxpilot.cli.main selftest
     ;;
   fuzz)
     echo "Running Invariant Fuzzing inside container..."
-    python3 -m taxsarthi.cli.main fuzz --cases 3000 --seed 42
+    python3 -m taxpilot.cli.main fuzz --cases 3000 --seed 42
     ;;
   *)
     echo "Unknown action: $ACTION"

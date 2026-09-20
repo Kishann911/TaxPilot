@@ -47,11 +47,11 @@ import sys
 from datetime import date, timedelta
 
 if sys.version_info < (3, 9):
-    sys.exit("TaxSarthi needs Python 3.9 or newer (found %d.%d)." % sys.version_info[:2])
+    sys.exit("TaxPilot needs Python 3.9 or newer (found %d.%d)." % sys.version_info[:2])
 
 try:
-    from taxsarthi.core import tax_engine
-    from taxsarthi.core.validate_income import check as validate_check
+    from taxpilot.core import tax_engine
+    from taxpilot.core.validate_income import check as validate_check
 except (ImportError, ModuleNotFoundError):
     import tax_engine
     from validate_income import check as validate_check

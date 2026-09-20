@@ -21,7 +21,7 @@ The repository is organized into five distinct layers:
 
 ```
 TaxPilot/
-├── taxsarthi/                     # Core Python Engine & CLI Package
+├── taxpilot/                      # Core Python Engine & CLI Package
 │   ├── core/
 │   │   ├── tax_engine.py         # 906 lines: Deterministic AY 2026-27 computation core
 │   │   ├── validate_income.py    # 440 lines: Statutory schema validator & invariant guard
@@ -39,7 +39,7 @@ TaxPilot/
 │       └── main.py               # Unified CLI: compute, validate, selftest, fuzz, tis, decrypt
 │
 ├── skills/                        # Universal Agent Skills Ecosystem
-│   └── taxsarthi/
+│   └── taxpilot/
 │       ├── SKILL.md              # Open standard Agent Skill definition
 │       ├── scripts/              # Standalone test fixtures & automation scripts
 │       │   ├── test_tax_engine.py       # 51 Golden statutory test cases
@@ -68,7 +68,7 @@ TaxPilot/
 
 ## 3. Statutory Engine Verification: Python vs Legacy JavaScript
 
-A rigorous comparative audit was conducted between the authoritative Python engine (`taxsarthi/core/tax_engine.py`) and the browser JavaScript implementation (`docs/app.js`).
+A rigorous comparative audit was conducted between the authoritative Python engine (`taxpilot/core/tax_engine.py`) and the browser JavaScript implementation (`docs/app.js`).
 
 While both implementations correctly handle standard income slabs for AY 2026-27 under the New Regime (0–4L @ 0%, 4–8L @ 5%, 8–12L @ 10%, 12–16L @ 15%, 16–20L @ 20%, 20–24L @ 25%, >24L @ 30%) and standard deductions (₹75,000 New / ₹50,000 Old), **the audit uncovered 10 critical statutory discrepancies and bugs in the legacy JavaScript code:**
 

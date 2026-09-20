@@ -26,6 +26,7 @@ filing-pack.md
 # Re-include skill & source code explicitly
 !skills/**/*.py
 !skills/**/*.md
+!taxpilot/**/*.py
 !taxsarthi/**/*.py
 
 # Python builds & artifacts

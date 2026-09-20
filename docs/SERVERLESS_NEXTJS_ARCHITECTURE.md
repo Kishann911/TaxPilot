@@ -102,7 +102,7 @@ web/
 
 ## 3. The TypeScript Statutory Engine Architecture
 
-To eliminate the 10 critical bugs discovered in the legacy JavaScript code, the TypeScript engine (`lib/engine/taxEngine.ts`) is a direct, mathematical port of `taxsarthi/core/tax_engine.py`:
+To eliminate the 10 critical bugs discovered in the legacy JavaScript code, the TypeScript engine (`lib/engine/taxEngine.ts`) is a direct, mathematical port of `taxpilot/core/tax_engine.py`:
 
 ```typescript
 // lib/engine/types.ts

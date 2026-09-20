@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TaxSarthi Repository Synchronization & Automation Script
+"""TaxPilot Repository Synchronization & Automation Script
 
 Performs safe, authenticated git operations strictly against TARGET_REPO within the
 isolated automation workspace. Never logs tokens or secret credentials.

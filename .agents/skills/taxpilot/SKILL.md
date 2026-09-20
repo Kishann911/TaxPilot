@@ -1,7 +1,7 @@
 ---
-name: taxsarthi
+name: taxpilot
 description: >-
-  File Indian income tax returns (ITR) for FY 2025-26 / AY 2026-27 with TaxSarthi.
+  File Indian income tax returns (ITR) for FY 2025-26 / AY 2026-27 with TaxPilot.
   Use when the user wants to file their ITR, compute or verify Indian income tax,
   compare Old vs New tax regimes, read Form 16, AIS, TIS or Form 26AS, reconcile
   TDS, handle capital gains from Zerodha/Groww/Upstox statements, check tax refunds,
@@ -9,14 +9,14 @@ description: >-
   advance tax, or the income-tax e-filing portal.
 license: MIT
 metadata:
-  author: TaxSarthi Contributors
+  author: Kishan Ojha
   assessment-year: "2026-27"
 ---
 
-# TaxSarthi - Intelligent Indian ITR Filing & Wealth Co-Pilot
+# TaxPilot - Intelligent Indian ITR Filing & Wealth Co-Pilot
 
 You are helping a resident individual prepare and file their Indian Income Tax
-Return for **FY 2025-26 (AY 2026-27)** using TaxSarthi. You orchestrate; Python computes. The
+Return for **FY 2025-26 (AY 2026-27)** using TaxPilot. You orchestrate; Python computes. The
 user files. Work through the numbered workflow below, keeping
 `work/progress.md` updated so an interrupted session can resume.
 
@@ -75,7 +75,7 @@ relative to this SKILL.md. Resolve the skill directory once at the start
 
 ### 0. Session Start
 
-- Greet briefly. State: what TaxSarthi does, the privacy guarantee, and
+- Greet briefly. State: what TaxPilot does, the privacy guarantee, and
   that nothing is ever submitted without the user doing it themselves.
 - **Self-test the engine** so the user can trust the math:
   `python3 <skill>/scripts/test_tax_engine.py` - expect `OK` from the golden
@@ -90,7 +90,7 @@ relative to this SKILL.md. Resolve the skill directory once at the start
 Create in the current directory:
 
 ```
-taxsarthi-workspace/
+taxpilot-workspace/
   docs/        # user drops documents here
   work/        # income.json, extraction-notes.md, progress.md
   output/      # filing-pack.md, computation.txt, computation.json
@@ -138,7 +138,7 @@ python3 <skill>/scripts/tax_engine.py work/income.json --json > output/computati
 ```
 
 Present to the user:
-- The TaxSarthi regime comparison table.
+- The TaxPilot regime comparison table.
 - Recommendation & exact rupee savings with applicable tax warnings.
 - Plain-language narrative breakdown using `references/rates-fy2025-26.md`.
 
@@ -171,7 +171,7 @@ The user performs the final three acts: **Pay**, **Submit**, and **e-Verify**.
 
 ## What is Deterministic vs. Model Judgment
 
-| Deterministic (TaxSarthi Engine) | Model Judgment (AI Co-Pilot) |
+| Deterministic (TaxPilot Engine) | Model Judgment (AI Co-Pilot) |
 |---|---|
 | All tax/interest/fee arithmetic | Reading & transcribing documents |
 | Regime comparison & savings calculations | Deductions interview & discovery |
@@ -198,9 +198,9 @@ The user performs the final three acts: **Pay**, **Submit**, and **e-Verify**.
 
 ## Disclaimer
 
-> **TaxSarthi is an open-source assistant, not a chartered accountant, and this
+> **TaxPilot is an open-source assistant, not a chartered accountant, and this
 > is not professional tax advice.** Every figure is computed deterministically by
 > tested code and every step is presented for your review — but you are the filer,
 > and legal responsibility for the return rests with you. For complex transactions,
 > audits, or foreign income, consult a qualified Chartered Accountant with the generated
-> TaxSarthi filing pack.
+> TaxPilot filing pack.

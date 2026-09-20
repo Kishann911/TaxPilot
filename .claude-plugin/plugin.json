@@ -2,5 +2,5 @@
   "name": "taxpilot",
   "description": "TaxPilot - File Indian income tax returns (ITR) for FY 2025-26 / AY 2026-27 deterministically",
   "version": "1.0.0",
-  "skills": ["skills/taxsarthi"]
+  "skills": ["skills/taxpilot"]
 }

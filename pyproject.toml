@@ -3,13 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "taxsarthi"
+name = "taxpilot"
 version = "1.0.0"
-description = "TaxSarthi - Deterministic Indian Income Tax Return (ITR) Engine & AI Co-Pilot for AY 2026-27"
+description = "TaxPilot - Deterministic Indian Income Tax Return (ITR) Engine & AI Co-Pilot for AY 2026-27"
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-    { name = "TaxSarthi Contributors" }
+    { name = "Kishan Ojha", email = "kishanojha462@gmail.com" }
 ]
 keywords = ["tax", "income-tax", "india", "itr", "itr-1", "itr-2", "itr-4", "form-16", "ais", "tax-calculator"]
 classifiers = [
@@ -29,8 +29,9 @@ requires-python = ">=3.9"
 dependencies = []
 
 [project.scripts]
-taxsarthi = "taxsarthi.cli.main:main"
+taxpilot = "taxpilot.cli.main:main"
+taxsarthi = "taxpilot.cli.main:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["taxsarthi*"]
+include = ["taxpilot*"]

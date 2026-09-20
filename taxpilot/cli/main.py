@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""TaxSarthi CLI - Deterministic Indian Income Tax (ITR) Filing & Computation Tool
+"""TaxPilot CLI - Deterministic Indian Income Tax (ITR) Filing & Computation Tool
 
 Usage:
-    taxsarthi compute <income.json> [--regime {both,new,old}] [--json]
-    taxsarthi validate <income.json>
-    taxsarthi selftest
-    taxsarthi fuzz [--cases N] [--seed S]
-    taxsarthi decrypt <encrypted_file> <password> [<output_file>]
-    taxsarthi redact <ais_file.json> [<output_file.json>]
-    taxsarthi tis <ais_file.json>
-    taxsarthi parse26as <file_26as>
-    taxsarthi version
+    taxpilot compute <income.json> [--regime {both,new,old}] [--json]
+    taxpilot validate <income.json>
+    taxpilot selftest
+    taxpilot fuzz [--cases N] [--seed S]
+    taxpilot decrypt <encrypted_file> <password> [<output_file>]
+    taxpilot redact <ais_file.json> [<output_file.json>]
+    taxpilot tis <ais_file.json>
+    taxpilot parse26as <file_26as>
+    taxpilot version
 """
 
 import argparse
@@ -19,10 +19,10 @@ import os
 import sys
 import unittest
 
-from taxsarthi import __version__
-import taxsarthi.core.tax_engine as engine
-import taxsarthi.core.validate_income as validator
-import taxsarthi.core.fuzz_engine as fuzzer
+from taxpilot import __version__
+import taxpilot.core.tax_engine as engine
+import taxpilot.core.validate_income as validator
+import taxpilot.core.fuzz_engine as fuzzer
 
 
 def cmd_compute(args):
@@ -59,7 +59,7 @@ def cmd_validate(args):
 
     res = validator.validate_file(args.file)
     if res["valid"]:
-        print(f"✅ {args.file} is perfectly valid for TaxSarthi engine.")
+        print(f"✅ {args.file} is perfectly valid for TaxPilot engine.")
         if res.get("warnings"):
             print(f"\n⚠️  {len(res['warnings'])} warning(s):")
             for w in res["warnings"]:
@@ -75,7 +75,7 @@ def cmd_validate(args):
 def cmd_selftest(args):
     """Run golden and validator test suites."""
     print("================================================================")
-    print("TaxSarthi Self-Test Suite (Golden Tests & Invariant Checks)")
+    print("TaxPilot Self-Test Suite (Golden Tests & Invariant Checks)")
     print("================================================================")
     
     # Import and run test suites
@@ -84,7 +84,9 @@ def cmd_selftest(args):
     
     # Locate test files
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    scripts_dir = os.path.join(base_dir, "skills", "taxsarthi", "scripts")
+    scripts_dir = os.path.join(base_dir, "skills", "taxpilot", "scripts")
+    if not os.path.exists(scripts_dir):
+        scripts_dir = os.path.join(base_dir, "skills", "taxsarthi", "scripts")
     
     if os.path.exists(scripts_dir):
         discovered = loader.discover(scripts_dir, pattern="test_*.py")
@@ -94,7 +96,7 @@ def cmd_selftest(args):
     result = runner.run(suite)
     
     if result.wasSuccessful():
-        print("\n🎉 ALL TESTS PASSED! TaxSarthi deterministic engine verified.")
+        print("\n🎉 ALL TESTS PASSED! TaxPilot deterministic engine verified.")
         return 0
     return 1
 
@@ -103,16 +105,17 @@ def cmd_fuzz(args):
     """Run property-based fuzzer."""
     cases = args.cases or 3000
     seed = args.seed or 42
-    print(f"Running TaxSarthi Invariant Fuzzer ({cases} cases, seed={seed})...")
+    print(f"Running TaxPilot Invariant Fuzzer ({cases} cases, seed={seed})...")
     return fuzzer.run_fuzz(cases, seed)
 
 
 def main():
+    prog_name = os.path.basename(sys.argv[0]) if sys.argv and sys.argv[0] else "taxpilot"
     parser = argparse.ArgumentParser(
-        prog="taxsarthi",
-        description="TaxSarthi - Intelligent, Deterministic Indian Income Tax Return (ITR) CLI & Co-Pilot (AY 2026-27)",
+        prog=prog_name,
+        description="TaxPilot - Intelligent, Deterministic Indian Income Tax Return (ITR) CLI & Co-Pilot (AY 2026-27)",
     )
-    parser.add_argument("-v", "--version", action="version", version=f"TaxSarthi v{__version__}")
+    parser.add_argument("-v", "--version", action="version", version=f"TaxPilot v{__version__}")
     subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
 
     # compute
@@ -133,11 +136,11 @@ def main():
     p_fuzz.add_argument("--seed", type=int, default=42, help="RNG Seed (default: 42)")
 
     # version
-    subparsers.add_parser("version", help="Show TaxSarthi version")
+    subparsers.add_parser("version", help="Show TaxPilot version")
 
     args = parser.parse_args()
     if not args.command or args.command == "version":
-        print(f"TaxSarthi v{__version__} - Assessment Year 2026-27 (FY 2025-26)")
+        print(f"TaxPilot v{__version__} - Assessment Year 2026-27 (FY 2025-26)")
         if not args.command:
             parser.print_help()
         return 0

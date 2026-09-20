@@ -6,7 +6,7 @@
       "name": "taxpilot",
       "description": "TaxPilot Indian Income Tax (ITR) Assistant for Claude Code",
       "version": "1.0.0",
-      "skills": ["skills/taxsarthi"]
+      "skills": ["skills/taxpilot"]
     }
   ]
 }

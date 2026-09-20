@@ -42,7 +42,7 @@ Unlike generic generative AI tax demos where an LLM hallucinates approximate ari
   - **Zero-Knowledge Privacy Sandbox**: In-browser client-side scrubber redacting PAN, Aadhaar, TAN, accounts, and contact info before model inspection.
   - **AIS SFT Intelligence Classifier**: Searchable directory of 18 Statement of Financial Transaction reporting codes mapped directly to ITR schedules.
 - **⚡ Authoritative Dual-Engine Parity**:
-  - Full TypeScript port (`src/lib/engine/taxEngine.ts`) and Python core (`taxsarthi/core/tax_engine.py`) with 100% mathematical parity.
+  - Full TypeScript port (`src/lib/engine/taxEngine.ts`) and Python core (`taxpilot/core/tax_engine.py`) with 100% mathematical parity.
   - Resolves all statutory nuances: Section 87A marginal relief cliff, Section 112A ₹1.25L exemption, unexhausted basic exemption absorption, VDA surcharge, dividend 15% surcharge ceiling, and Section 207(2) senior citizen advance tax immunity.
 - **🛡️ 3-Layer Mathematical Rigor**:
   - **51 Golden Tests** hand-derived directly from statutory provisions.
@@ -68,7 +68,7 @@ graph TD
             TSEngine["TypeScript Statutory Engine (taxEngine.ts)"]
         end
 
-        subgraph "2. Core Deterministic Engine (taxsarthi/)"
+        subgraph "2. Core Deterministic Engine (taxpilot/)"
             PythonEngine["Deterministic Tax Engine (tax_engine.py)"]
             Validator["Schema Gate & Validator (validate_income.py)"]
             Fuzzer["Property Fuzzer (fuzz_engine.py)"]
@@ -76,7 +76,7 @@ graph TD
         end
 
         subgraph "3. Agent Skills Ecosystem (skills/)"
-            AgentSkill["Antigravity / Gemini Skill (skills/taxsarthi)"]
+            AgentSkill["Antigravity / Gemini Skill (skills/taxpilot)"]
             ClaudePlugin["Claude Code Plugin (.claude-plugin)"]
             CodexPlugin["OpenAI Codex Plugin (.codex-plugin)"]
         end
@@ -140,8 +140,8 @@ pip install -e .
 
 # Run CLI commands (both 'taxpilot' and 'taxsarthi' are supported)
 taxpilot --help
-taxpilot compute skills/taxsarthi/assets/example-income.json
-taxpilot validate skills/taxsarthi/assets/example-income.json
+taxpilot compute skills/taxpilot/assets/example-income.json
+taxpilot validate skills/taxpilot/assets/example-income.json
 taxpilot selftest
 ```
 
@@ -149,7 +149,7 @@ taxpilot selftest
 
 ## 📊 Sample Output
 
-Running `taxpilot compute skills/taxsarthi/assets/example-income.json`:
+Running `taxpilot compute skills/taxpilot/assets/example-income.json`:
 
 ```text
 Income-tax computation for FY 2025-26 (AY 2026-27)
@@ -205,16 +205,16 @@ npm run typecheck
 npm run build
 
 # 5. Python Golden Tests (51 Cases)
-python3 skills/taxsarthi/scripts/test_tax_engine.py
+python3 skills/taxpilot/scripts/test_tax_engine.py
 
 # 6. Python Input Validator Tests (104 Cases)
-python3 skills/taxsarthi/scripts/test_validate_income.py
+python3 skills/taxpilot/scripts/test_validate_income.py
 
 # 7. Python Extraction Tests (50 Cases)
-python3 skills/taxsarthi/scripts/test_extraction.py
+python3 skills/taxpilot/scripts/test_extraction.py
 
 # 8. Property-Based Seeded Invariant Fuzzer (3,000 iterations)
-python3 -m taxsarthi.cli.main fuzz --cases 3000 --seed 42
+python3 -m taxpilot.cli.main fuzz --cases 3000 --seed 42
 ```
 
 ---

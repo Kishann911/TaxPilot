@@ -12,8 +12,8 @@ setup(
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-            "taxpilot=taxsarthi.cli.main:main",
-            "taxsarthi=taxsarthi.cli.main:main",
+            "taxpilot=taxpilot.cli.main:main",
+            "taxsarthi=taxpilot.cli.main:main",
         ],
     },
     python_requires=">=3.9",

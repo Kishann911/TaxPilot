@@ -34,7 +34,7 @@ graph TD
 
 | Sprint / Day | Focus Area | Deliverables & Verification Gates |
 | :--- | :--- | :--- |
-| **Day 1** | **Authoritative TypeScript Engine Port** | • Port `taxsarthi/core/tax_engine.py` to `lib/engine/taxEngine.ts`.<br>• Fix all 10 legacy JS discrepancies (234B rollover, 111A/112A basic exemption absorption, VDA surcharge, dividend capping).<br>• Set up Vitest test runner executing the **51 Golden Test fixtures** with 100% parity against Python. |
+| **Day 1** | **Authoritative TypeScript Engine Port** | • Port `taxpilot/core/tax_engine.py` to `lib/engine/taxEngine.ts`.<br>• Fix all 10 legacy JS discrepancies (234B rollover, 111A/112A basic exemption absorption, VDA surcharge, dividend capping).<br>• Set up Vitest test runner executing the **51 Golden Test fixtures** with 100% parity against Python. |
 | **Day 2** | **Next.js 15 Scaffold & Design System** | • Initialize Next.js 15 App Router, React 19, TypeScript, and Tailwind CSS v4.<br>• Implement dark obsidian color tokens, glassmorphic card styles, and theme switcher.<br>• Build responsive layout shell: Navigation Header, Status Bar, and Terminal Hero section. |
 | **Day 3** | **Interactive Tax Studio & Visual Analytics** | • Build dual-pane studio (`StudioInputs.tsx` and `RegimeLedger.tsx`).<br>• Connect reactive state machine for instant sub-5ms recalculation on every input change.<br>• Implement the **Regime Break-Even Radar** chart and dynamic Tax Waterfall.<br>• Build the interactive Slab Breakdown Table and Section 234 interest preview. |
 | **Day 4** | **Document Dropzone, SFT & Audit Tools** | • Implement client-side `DocumentDropzone.tsx` for zero-knowledge Form 16 PDF & AIS JSON parsing.<br>• Build searchable AIS SFT Directory with instant category filtering.<br>• Build 10-point Pre-Filing Audit Checklist with live circular SVG progress ring.<br>• Build 4-question ITR Form Decision Wizard and CA-grade Master Tax Sheet export. |
@@ -124,8 +124,8 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -e .
-      - run: python3 skills/taxsarthi/scripts/test_tax_engine.py
-      - run: python3 skills/taxsarthi/scripts/test_validate_income.py
+      - run: python3 skills/taxpilot/scripts/test_tax_engine.py
+      - run: python3 skills/taxpilot/scripts/test_validate_income.py
 
   nextjs-verification:
     runs-on: ubuntu-latest

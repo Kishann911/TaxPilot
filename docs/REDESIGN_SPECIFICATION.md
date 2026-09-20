@@ -75,7 +75,7 @@ The redesigned TaxPilot frontend bridges the gap between **high-performance engi
   - One-click copy install command (`git clone ... && ./install.sh`).
   - Quick action buttons (Launch Studio / CLI Docs).
 - **Right Column:**
-  - Animated live terminal emulator rendering real-time `taxsarthi compute income.json` output with color-coded syntax and live calculation receipts.
+  - Animated live terminal emulator rendering real-time `taxpilot compute income.json` output with color-coded syntax and live calculation receipts.
 - **Metrics Ribbon:**
   - 4 high-impact counters: `205+ Golden Tests`, `104 Schema Rules`, `18 AIS SFT Codes`, `350,000+ Invariant Fuzz Cycles`.
 

@@ -111,7 +111,7 @@ A client-side broker statement aggregator:
      - Statutory footnotes citing exact provisions of the Income-tax Act, 1961.
 2. **Standardized `income.json` Filing Pack:**
    - Downloadable JSON file strictly adhering to TaxPilot's schema.
-   - Fully compatible with `taxsarthi compute <file>` and automated CI test suites.
+   - Fully compatible with `taxpilot compute <file>` and automated CI test suites.
 
 ---
 

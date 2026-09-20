@@ -25,9 +25,9 @@ set -euo pipefail
 
 DEFAULT_REPO="https://github.com/Kishann911/TaxPilot.git"
 
-REPO="${TAXSARTHI_REPO:-$DEFAULT_REPO}"
-REF="${TAXSARTHI_REF:-}"
-SKILL="taxsarthi"
+REPO="${TAXPILOT_REPO:-${TAXSARTHI_REPO:-$DEFAULT_REPO}}"
+REF="${TAXPILOT_REF:-${TAXSARTHI_REF:-}}"
+SKILL="taxpilot"
 
 usage() {
   echo "Usage: install.sh [--here | --project DIR] [claude|codex|gemini|cli|all]"
@@ -75,9 +75,9 @@ fetch_source() {
 
 if [ -f "$(dirname "$0")/skills/$SKILL/SKILL.md" ]; then
   SRC="$(cd "$(dirname "$0")" && pwd)"
-  echo "Installing TaxSarthi from local checkout: $SRC"
-elif [ "${TAXSARTHI_NO_FETCH:-0}" = "1" ]; then
-  echo "ERROR: TAXSARTHI_NO_FETCH=1 and no checkout found beside this script." >&2
+  echo "Installing TaxPilot from local checkout: $SRC"
+elif [ "${TAXPILOT_NO_FETCH:-${TAXSARTHI_NO_FETCH:-0}}" = "1" ]; then
+  echo "ERROR: TAXPILOT_NO_FETCH=1 and no checkout found beside this script." >&2
   exit 1
 else
   SRC="$(mktemp -d)"
@@ -124,9 +124,9 @@ case "$TARGET" in
     ;;
   gemini)  install_into "$BASE/.gemini/skills" ;;
   cli)
-    echo "Installing TaxSarthi CLI locally via pip..."
+    echo "Installing TaxPilot CLI locally via pip..."
     pip3 install -e "$SRC" || python3 -m pip install -e "$SRC"
-    echo "  installed taxsarthi CLI command"
+    echo "  installed taxpilot / taxsarthi CLI commands"
     ;;
   all)
     install_into "$BASE/.claude/skills"
@@ -137,7 +137,7 @@ case "$TARGET" in
 esac
 
 echo
-echo "Verifying the TaxSarthi engine (golden test suite)..."
+echo "Verifying the TaxPilot engine (golden test suite)..."
 FAILED=0
 for dest in "${INSTALLED[@]}"; do
   if PYTHONDONTWRITEBYTECODE=1 python3 "$dest/scripts/test_tax_engine.py" >/dev/null 2>&1; then
@@ -151,13 +151,13 @@ done
 if [ "$FAILED" -ne 0 ]; then
   echo "WARNING: verification failed. Check python3 version (3.9+ required)." >&2
 else
-  echo "✅ TaxSarthi installation and golden tests verified successfully!"
+  echo "✅ TaxPilot installation and golden tests verified successfully!"
 fi
 
 echo
 if [ "$SCOPE" = "project" ]; then
-  echo "Done. TaxSarthi is installed in $BASE."
+  echo "Done. TaxPilot is installed in $BASE."
 else
-  echo "Done. Restart your agent CLI, then say: \"file my ITR with TaxSarthi\""
+  echo "Done. Restart your agent CLI, then say: \"file my ITR with TaxPilot\""
 fi
 exit "$FAILED"

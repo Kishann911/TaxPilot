@@ -1,5 +1,6 @@
 # Ignore Python packaging and CLI files that trigger Vercel Python runtime detection
 setup.py
+taxpilot/
 taxsarthi/
 skills/
 automation/
