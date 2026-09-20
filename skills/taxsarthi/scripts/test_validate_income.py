@@ -74,7 +74,7 @@ def run_cli(script, *args, stdin=None):
 
 class TempFileMixin:
     def setUp(self):
-        self._tmpdir = tempfile.mkdtemp(prefix="itr-wala-test-")
+        self._tmpdir = tempfile.mkdtemp(prefix="taxpilot-test-")
         self.addCleanup(shutil.rmtree, self._tmpdir, True)
 
     def write(self, name, content):

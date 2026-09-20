@@ -2,16 +2,20 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="taxsarthi",
+    name="taxpilot",
     version="1.0.0",
-    description="TaxSarthi - Deterministic Indian Income Tax Return (ITR) Engine & AI Co-Pilot for AY 2026-27",
-    author="TaxSarthi Contributors",
+    description="TaxPilot - Deterministic Indian Income Tax Return (ITR) Engine & AI Co-Pilot for AY 2026-27",
+    author="Kishan Ojha",
+    author_email="kishanojha462@gmail.com",
+    url="https://github.com/Kishann911/TaxSarthi-",
     license="MIT",
     packages=find_packages(),
     entry_points={
         "console_scripts": [
+            "taxpilot=taxsarthi.cli.main:main",
             "taxsarthi=taxsarthi.cli.main:main",
         ],
     },
     python_requires=">=3.9",
 )
+

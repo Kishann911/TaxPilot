@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# TaxSarthi Docker Automation Runner
+# TaxPilot Docker Automation Runner
 set -euo pipefail
 
 ACTION="${1:-sync}"
 
 echo "================================================================="
-echo " TaxSarthi Automation Container - Execution Mode: $ACTION"
+echo " TaxPilot Automation Container - Execution Mode: $ACTION"
 echo "================================================================="
 
 case "$ACTION" in

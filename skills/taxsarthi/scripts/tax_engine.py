@@ -24,7 +24,7 @@ import sys
 from datetime import date, timedelta
 
 if sys.version_info < (3, 9):
-    sys.exit("itr-wala needs Python 3.9 or newer (found %d.%d)." % sys.version_info[:2])
+    sys.exit("TaxPilot needs Python 3.9 or newer (found %d.%d)." % sys.version_info[:2])
 
 FY = "2025-26"
 AY = "2026-27"

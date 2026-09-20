@@ -22,7 +22,7 @@ import re
 import sys
 
 if sys.version_info < (3, 9):
-    sys.exit("itr-wala needs Python 3.9 or newer (found %d.%d)."
+    sys.exit("TaxPilot needs Python 3.9 or newer (found %d.%d)."
              % sys.version_info[:2])
 
 TOKEN = re.compile(r"([^.\[\]]+)|\[(\d+)\]")

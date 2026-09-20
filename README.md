@@ -1,7 +1,7 @@
-# TaxSarthi
+# TaxPilot
 
 <p align="center">
-  <img src="docs/assets/logo.svg" alt="TaxSarthi Logo" width="380">
+  <img src="docs/assets/logo.svg" alt="TaxPilot Logo" width="380">
 </p>
 
 <p align="center">
@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/karanb192/itr-wala/actions/workflows/tests.yml"><img src="https://github.com/karanb192/itr-wala/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <a href="https://github.com/Kishann911/TaxSarthi-/actions/workflows/tests.yml"><img src="https://github.com/Kishann911/TaxSarthi-/actions/workflows/tests.yml/badge.svg" alt="TaxPilot CI"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="https://karanb192.github.io/itr-wala/"><img src="https://img.shields.io/badge/Web_App-Tax_Studio-10B981" alt="Web App"></a>
+  <a href="https://github.com/Kishann911/TaxSarthi-"><img src="https://img.shields.io/badge/Next.js_16-Serverless_Edition-blueviolet" alt="Next.js 16"></a>
   <a href="#test-receipts--invariants"><img src="https://img.shields.io/badge/Golden_Tests-51_Passed-teal" alt="Golden Tests"></a>
   <a href="#test-receipts--invariants"><img src="https://img.shields.io/badge/Fuzzer-350k%2B_Cycles-success" alt="Fuzzer"></a>
 </p>
@@ -21,44 +21,55 @@
 
 ## 📌 Product Overview
 
-**TaxSarthi** is an open-source, deterministic Indian income tax calculation engine and AI co-pilot designed for individual taxpayers filing for **AY 2026-27**. 
+**TaxPilot** is an open-source, deterministic Indian income tax calculation engine and AI co-pilot designed for individual taxpayers filing for **AY 2026-27 (FY 2025-26)**, owned and maintained by **Kishan Ojha**.
 
-Unlike generic generative AI tax demos where an LLM performs approximate arithmetic, TaxSarthi establishes an unyielding division of responsibilities:
-1. **The AI Assistant** transcribes structured and unstructured documents (Form 16, AIS JSON, Form 26AS, broker Capital Gains P&L) into a validated schema and conducts a proactive deductions interview.
-2. **The Deterministic Python Engine** calculates every rupee of slab tax, Section 87A rebate & marginal relief, surcharge caps, 4% health & education cess, and sections 234A/B/C/F interest and fees.
-3. **The User** retains full sovereign control to **Pay, Submit, and e-Verify** on the official Income Tax portal.
+Unlike generic generative AI tax demos where an LLM hallucinates approximate arithmetic, TaxPilot establishes an unyielding division of responsibilities:
+1. **The AI Assistant** ingests structured and unstructured documents (Form 16, AIS JSON, Form 26AS, broker Capital Gains P&L) into a validated schema and conducts a proactive deductions interview under zero-knowledge privacy.
+2. **The Deterministic Calculation Engine (TypeScript & Python)** calculates every single rupee of slab tax, Section 87A rebate & marginal relief, surcharge caps, 4% health & education cess, and sections 234A/B/C/F interest and late fees with 100% mathematical certainty.
+3. **The Sovereign Taxpayer** reviews the exact calculation breakdown, exports the audit-ready filing pack, and completes submission on the official portal (`incometax.gov.in`).
 
 ---
 
 ## ✨ Key Features
 
-- **⚡ Live Old vs. New Regime Comparison**: Instantaneous side-by-side computation illustrating exact rupee savings between the default New Regime (u/s 115BAC) and the Old Regime.
+- **🌐 Modern Serverless Web Studio (Next.js 16)**:
+  - Micro-interactive, dual-pane reactive Tax Studio updating in sub-5ms.
+  - Tailored with an **OKLCH color system** supporting dark and light modes.
+  - **Statutory Break-Even Radar**: Interactive deduction slider calculating the exact crossover threshold where Old Regime overtakes New Regime.
+  - **Deductions Master Matrix**: Side-by-side Chapter VI-A comparison (80C, 80CCD, 80D, 80E, 80G, 24(b), HRA).
+  - **10-Point Pre-Filing Audit Checklist**: Interactive verification guarding against Section 139(9) defective return notices.
+  - **ITR Form Decision Wizard**: 4-question wizard recommending ITR-1, ITR-2, ITR-3, or ITR-4.
+  - **Zero-Knowledge Privacy Sandbox**: In-browser client-side scrubber redacting PAN, Aadhaar, TAN, accounts, and contact info before model inspection.
+  - **AIS SFT Intelligence Classifier**: Searchable directory of 18 Statement of Financial Transaction reporting codes mapped directly to ITR schedules.
+- **⚡ Authoritative Dual-Engine Parity**:
+  - Full TypeScript port (`src/lib/engine/taxEngine.ts`) and Python core (`taxsarthi/core/tax_engine.py`) with 100% mathematical parity.
+  - Resolves all statutory nuances: Section 87A marginal relief cliff, Section 112A ₹1.25L exemption, unexhausted basic exemption absorption, VDA surcharge, dividend 15% surcharge ceiling, and Section 207(2) senior citizen advance tax immunity.
 - **🛡️ 3-Layer Mathematical Rigor**:
   - **51 Golden Tests** hand-derived directly from statutory provisions.
-  - **104 Validator Tests** guarding against misspelled schema keys, malformed data, and negative amounts.
+  - **104 Validator Tests** guarding against malformed keys and negative inputs.
   - **Seeded Property-Based Invariant Fuzzer** asserting statutory invariants over 350,000+ randomized returns.
-- **🔒 Privacy-Preserving & Zero-Trust**:
-  - Automated blind extraction scripts for encrypted AIS JSON and Form 26AS.
-  - Rejects inputs containing PAN, Aadhaar, or bank credentials.
-  - Never prompts for or stores portal passwords or OTPs.
-- **🌐 Interactive Web Application & Tax Studio**: A client-side, responsive tax computation simulator and schedule navigator.
-- **🔌 Multi-Agent Integration**: First-class support as a native skill/plugin for **Antigravity / Gemini**, **Claude Code**, and **OpenAI Codex**, plus a standalone Python CLI.
-- **🐳 Docker Automation Environment**: Fully isolated containerization for automated validation and GitHub synchronization.
+- **🔌 Multi-Agent Integration & CLI**:
+  - First-class agent skills for **Antigravity / Gemini**, **Claude Code**, and **OpenAI Codex**.
+  - Dual CLI commands: `taxpilot` and `taxsarthi`.
+- **🐳 Docker Automation Environment**:
+  - Fully isolated containerization for automated test execution and GitHub synchronization.
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ System Architecture
 
 ```mermaid
 graph TD
-    subgraph "TaxSarthi Platform"
-        subgraph "1. Client & Presentation Layer"
-            WebStudio["Interactive Tax Studio (docs/)"]
-            CLI["taxsarthi CLI Entrypoint"]
+    subgraph "TaxPilot Platform"
+        subgraph "1. Serverless Web Application (src/)"
+            NextApp["Next.js 16 App Router (Turbopack)"]
+            Studio["Interactive Tax Studio & Break-Even Radar"]
+            EdgeAPI["Serverless APIs (/api/compute, /api/validate)"]
+            TSEngine["TypeScript Statutory Engine (taxEngine.ts)"]
         end
 
-        subgraph "2. Core Python Engine (taxsarthi/)"
-            Engine["Deterministic Tax Engine (tax_engine.py)"]
+        subgraph "2. Core Deterministic Engine (taxsarthi/)"
+            PythonEngine["Deterministic Tax Engine (tax_engine.py)"]
             Validator["Schema Gate & Validator (validate_income.py)"]
             Fuzzer["Property Fuzzer (fuzz_engine.py)"]
             Parsers["AIS / 26AS / TIS Parsers & PII Redactor"]
@@ -75,31 +86,41 @@ graph TD
         end
     end
 
-    WebStudio --> Engine
-    CLI --> Engine
-    CLI --> Validator
-    AgentSkill --> Engine
-    ClaudePlugin --> Engine
-    DockerEnv --> CLI
+    Studio --> TSEngine
+    EdgeAPI --> TSEngine
+    AgentSkill --> PythonEngine
+    ClaudePlugin --> PythonEngine
+    CodexPlugin --> PythonEngine
+    DockerEnv --> PythonEngine
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Web Tax Studio
-Open the live interactive tax studio locally:
+### 1. Web Tax Studio (Next.js 16 Serverless)
+Run the live interactive tax studio locally:
 ```bash
-# Open docs/index.html in your browser
-open docs/index.html
+# Clone the repository
+git clone https://github.com/Kishann911/TaxSarthi-.git
+cd TaxSarthi-
+
+# Install dependencies & run development server
+npm install
+npm run dev
+
+# Open http://localhost:3000 in your browser
 ```
 
-### 2. Universal Agent Installer
-Clone the repository, review the code, and install directly into your AI assistant:
+To build for production:
 ```bash
-git clone https://github.com/karanb192/itr-wala.git
-cd itr-wala
+npm run build
+npm run start
+```
 
+### 2. Universal AI Agent Installer
+Install the TaxPilot skill directly into your AI assistant:
+```bash
 # Install for Claude Code
 ./install.sh
 
@@ -117,18 +138,18 @@ cd itr-wala
 ```bash
 pip install -e .
 
-# Run CLI commands
-taxsarthi --help
-taxsarthi compute skills/taxsarthi/assets/example-income.json
-taxsarthi validate skills/taxsarthi/assets/example-income.json
-taxsarthi selftest
+# Run CLI commands (both 'taxpilot' and 'taxsarthi' are supported)
+taxpilot --help
+taxpilot compute skills/taxsarthi/assets/example-income.json
+taxpilot validate skills/taxsarthi/assets/example-income.json
+taxpilot selftest
 ```
 
 ---
 
 ## 📊 Sample Output
 
-Running `taxsarthi compute skills/taxsarthi/assets/example-income.json`:
+Running `taxpilot compute skills/taxsarthi/assets/example-income.json`:
 
 ```text
 Income-tax computation for FY 2025-26 (AY 2026-27)
@@ -166,9 +187,41 @@ Income-tax computation for FY 2025-26 (AY 2026-27)
 
 ---
 
+## 🧪 Verification & Test Receipts
+
+Execute the full verification suite across TypeScript, Next.js APIs, and Python:
+
+```bash
+# 1. TypeScript Engine Golden Parity Tests
+npm run test:engine
+
+# 2. Next.js Serverless API Endpoint Tests
+npm run test:api
+
+# 3. TypeScript Typecheck
+npm run typecheck
+
+# 4. Next.js Production Build
+npm run build
+
+# 5. Python Golden Tests (51 Cases)
+python3 skills/taxsarthi/scripts/test_tax_engine.py
+
+# 6. Python Input Validator Tests (104 Cases)
+python3 skills/taxsarthi/scripts/test_validate_income.py
+
+# 7. Python Extraction Tests (50 Cases)
+python3 skills/taxsarthi/scripts/test_extraction.py
+
+# 8. Property-Based Seeded Invariant Fuzzer (3,000 iterations)
+python3 -m taxsarthi.cli.main fuzz --cases 3000 --seed 42
+```
+
+---
+
 ## 🐳 Docker Automation Environment
 
-TaxSarthi provides a dedicated, security-audited container automation suite in `automation/`:
+TaxPilot provides a dedicated container automation suite in `automation/`:
 
 ```
 automation/
@@ -191,27 +244,8 @@ automation/
 3. Run container automation:
    ```bash
    cd automation
-   docker compose run taxsarthi-automation sync
+   docker compose run taxpilot-automation sync
    ```
-
----
-
-## 🧪 Test Receipts & Invariants
-
-Run the full verification suite locally:
-```bash
-# 1. Golden Tests
-python3 skills/taxsarthi/scripts/test_tax_engine.py
-
-# 2. Input Validator Tests
-python3 skills/taxsarthi/scripts/test_validate_income.py
-
-# 3. Document Extraction Tests
-python3 skills/taxsarthi/scripts/test_extraction.py
-
-# 4. Property-Based Seeded Invariant Fuzzer (3,000 iterations)
-python3 -m taxsarthi.cli.main fuzz --cases 3000 --seed 42
-```
 
 ---
 
@@ -219,9 +253,10 @@ python3 -m taxsarthi.cli.main fuzz --cases 3000 --seed 42
 
 This project is licensed under the **MIT License**.
 
-- Original mathematical engine foundation and repository structure copyright © 2026 **Karan Bansal** (`karanb192/itr-wala`).
-- TaxSarthi platform enhancements, interactive web studio, CLI packaging, and Docker automation copyright © 2026 **TaxSarthi Contributors**.
-- Reference material (portal schedules and AIS SFT-code classification) adapted from the MIT-licensed `file-itr` project (`shivprime94/file-itr`).
+- **Project Lead & Owner:** Copyright © 2026 **Kishan Ojha** (`Kishann911/TaxSarthi-`).
+- **TaxPilot Contributors:** Enhancements, Serverless Next.js 16 Web Studio, TypeScript parity engine, and Edge APIs.
+- **Original Foundation:** Mathematical core engine foundation and initial repository structure copyright © 2026 **Karan Bansal** (`karanb192/itr-wala`).
+- **Reference Material:** Portal schedule notes and AIS SFT classifications adapted from the MIT-licensed `file-itr` project (`shivprime94/file-itr`).
 
 See [`LICENSE`](LICENSE) for complete details.
 
@@ -229,4 +264,4 @@ See [`LICENSE`](LICENSE) for complete details.
 
 ## ⚠️ Statutory Disclaimer
 
-> **TaxSarthi is an open-source software tool, not a chartered accountant or registered tax return preparer, and does not provide formal legal or financial advice.** All computations are performed strictly in accordance with published Indian Income-tax Act provisions for AY 2026-27 (FY 2025-26). Final filing, payment, and e-verification remain solely the responsibility of the individual taxpayer.
+> **TaxPilot is an open-source software tool, not a chartered accountant or registered tax return preparer, and does not provide formal legal or financial advice.** All computations are performed strictly in accordance with published Indian Income-tax Act provisions for AY 2026-27 (FY 2025-26). Final filing, payment, and e-verification remain solely the responsibility of the individual taxpayer.

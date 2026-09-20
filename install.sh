@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# TaxSarthi Installer - installs the TaxSarthi skill & engine into your agent environment.
+# TaxPilot Installer - installs the TaxPilot skill & engine into your agent environment.
 #
 # PREFERRED: clone the repo, review it, then run from checkout:
 #
@@ -7,23 +7,23 @@
 #   ./install.sh codex      # OpenAI Codex CLI
 #   ./install.sh gemini     # Antigravity / Gemini CLI
 #   ./install.sh all        # all supported agent platforms
-#   ./install.sh cli        # install local python CLI command (taxsarthi)
+#   ./install.sh cli        # install local python CLI command (taxpilot / taxsarthi)
 #
 # Scope: global (into $HOME) by default. Or install PROJECT-LOCAL:
 #
-#   cd ~/tax-2026 && /path/to/TaxSarthi/install.sh --here
+#   cd ~/tax-2026 && /path/to/TaxPilot/install.sh --here
 #   ./install.sh --project ~/tax-2026 all
 #
 # Override remote:
-#   TAXSARTHI_REF=<sha|tag|branch> ./install.sh
-#   TAXSARTHI_NO_FETCH=1 ./install.sh
-#   TAXSARTHI_REPO=<url> ./install.sh
+#   TAXPILOT_REF=<sha|tag|branch> ./install.sh
+#   TAXPILOT_NO_FETCH=1 ./install.sh
+#   TAXPILOT_REPO=<url> ./install.sh
 #
 # macOS and Linux. Windows: use WSL or manually copy skills/taxsarthi.
 
 set -euo pipefail
 
-DEFAULT_REPO="https://github.com/karanb192/itr-wala.git"
+DEFAULT_REPO="https://github.com/Kishann911/TaxSarthi-.git"
 
 REPO="${TAXSARTHI_REPO:-$DEFAULT_REPO}"
 REF="${TAXSARTHI_REF:-}"

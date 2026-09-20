@@ -67,14 +67,14 @@ def sanitize_url(url, token=""):
 
 
 def main():
-    log("Starting TaxSarthi Repository Sync Automation...")
+    log("Starting TaxPilot Repository Sync Automation...")
 
     # Load and validate environment
-    target_repo = os.environ.get("TARGET_REPO", "https://github.com/karanb192/itr-wala.git")
+    target_repo = os.environ.get("TARGET_REPO", "https://github.com/Kishann911/TaxSarthi-.git")
     target_branch = os.environ.get("TARGET_BRANCH", "main")
     token = os.environ.get("GITHUB_TOKEN", "")
-    user_name = os.environ.get("GIT_USER_NAME", "TaxSarthi Automation")
-    user_email = os.environ.get("GIT_USER_EMAIL", "automation@taxsarthi.local")
+    user_name = os.environ.get("GIT_USER_NAME", "Kishan Ojha (TaxPilot Automation)")
+    user_email = os.environ.get("GIT_USER_EMAIL", "kishanojha462@gmail.com")
     dry_run = os.environ.get("DRY_RUN", "true").lower() in ("true", "1", "yes")
     default_ws = "/automation/workspace" if os.path.exists("/automation") else os.path.join(os.getcwd(), "automation", "workspace")
     workspace_dir = os.environ.get("WORKSPACE_DIR", default_ws)
@@ -141,7 +141,7 @@ def main():
     log(status)
 
     # 4. Commit changes with semantic message
-    commit_msg = f"chore(automation): sync transformed TaxSarthi assets [{datetime.now().strftime('%Y-%m-%d %H:%M')}]"
+    commit_msg = f"chore(automation): sync transformed TaxPilot assets [{datetime.now().strftime('%Y-%m-%d %H:%M')}]"
     run_cmd(["git", "add", "-A"], cwd=repo_dir)
     run_cmd(["git", "commit", "-m", commit_msg], cwd=repo_dir)
     log(f"Committed changes with message: {commit_msg}")
@@ -157,7 +157,7 @@ def main():
         run_cmd(["git", "push", auth_url, f"HEAD:{target_branch}"], cwd=repo_dir, mask_output=True)
         log("✅ Successfully pushed changes to TARGET_REPO.")
 
-    log("TaxSarthi Automation run completed successfully.")
+    log("TaxPilot Automation run completed successfully.")
     return 0
 
 

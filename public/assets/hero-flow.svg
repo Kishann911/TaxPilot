@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="card-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="glow-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Step 1 Card: AI Document Extraction -->
+  <g transform="translate(20, 20)">
+    <rect width="250" height="280" rx="16" fill="url(#card-grad1)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="20" y="20" width="40" height="40" rx="10" fill="#3B82F6" fill-opacity="0.15"/>
+    <text x="32" y="46" font-family="'JetBrains Mono', monospace" font-size="18" fill="#60A5FA" font-weight="700">01</text>
+    <text x="20" y="95" font-family="'Inter', sans-serif" font-size="18" fill="#F8FAFC" font-weight="700">AI Transcription</text>
+    <text x="20" y="125" font-family="'Inter', sans-serif" font-size="13" fill="#94A3B8" width="210">
+      <tspan x="20" dy="0">Reads Form 16, AIS JSON,</tspan>
+      <tspan x="20" dy="20">26AS &amp; broker Tax P&amp;L.</tspan>
+      <tspan x="20" dy="20">Interviews for deductions</tspan>
+      <tspan x="20" dy="20">with zero prompt math.</tspan>
+    </text>
+    <rect x="20" y="220" width="210" height="36" rx="8" fill="#0F172A" stroke="#1E293B"/>
+    <text x="35" y="243" font-family="'JetBrains Mono', monospace" font-size="11.5" fill="#38BDF8">📄 income.json built</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M285 160 L315 160" stroke="#0D9488" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="315,156 323,160 315,164" fill="#0D9488"/>
+
+  <!-- Step 2 Card: Deterministic Engine (Highlighted) -->
+  <g transform="translate(325, 10)">
+    <rect width="260" height="300" rx="16" fill="#042F2E" stroke="#0D9488" stroke-width="2"/>
+    <rect x="20" y="20" width="40" height="40" rx="10" fill="#0D9488" fill-opacity="0.3"/>
+    <text x="32" y="46" font-family="'JetBrains Mono', monospace" font-size="18" fill="#34D399" font-weight="700">02</text>
+    <text x="20" y="95" font-family="'Inter', sans-serif" font-size="18" fill="#F8FAFC" font-weight="700">TaxSarthi Engine</text>
+    <text x="20" y="125" font-family="'Inter', sans-serif" font-size="13" fill="#A7F3D0" width="220">
+      <tspan x="20" dy="0">Deterministic Python math.</tspan>
+      <tspan x="20" dy="20">Old vs New regime comparison.</tspan>
+      <tspan x="20" dy="20">87A rebate, surcharge ceiling,</tspan>
+      <tspan x="20" dy="20">234A/B/C interest to the rupee.</tspan>
+    </text>
+    <rect x="20" y="235" width="220" height="38" rx="8" fill="#02201E" stroke="#0D9488"/>
+    <text x="35" y="259" font-family="'JetBrains Mono', monospace" font-size="11.5" fill="#34D399">🛡️ 205+ tests passed</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M600 160 L630 160" stroke="#0D9488" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="630,156 638,160 630,164" fill="#0D9488"/>
+
+  <!-- Step 3 Card: User Final Verification -->
+  <g transform="translate(635, 20)">
+    <rect width="250" height="280" rx="16" fill="url(#card-grad1)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="20" y="20" width="40" height="40" rx="10" fill="#F59E0B" fill-opacity="0.15"/>
+    <text x="32" y="46" font-family="'JetBrains Mono', monospace" font-size="18" fill="#FBBF24" font-weight="700">03</text>
+    <text x="20" y="95" font-family="'Inter', sans-serif" font-size="18" fill="#F8FAFC" font-weight="700">You File &amp; Verify</text>
+    <text x="20" y="125" font-family="'Inter', sans-serif" font-size="13" fill="#94A3B8" width="210">
+      <tspan x="20" dy="0">Schedule-by-schedule narration.</tspan>
+      <tspan x="20" dy="20">Zero password or OTP access.</tspan>
+      <tspan x="20" dy="20">You alone perform the three:</tspan>
+      <tspan x="20" dy="20">Pay, Submit &amp; e-Verify.</tspan>
+    </text>
+    <rect x="20" y="220" width="210" height="36" rx="8" fill="#0F172A" stroke="#1E293B"/>
+    <text x="35" y="243" font-family="'JetBrains Mono', monospace" font-size="11.5" fill="#FBBF24">🔒 Zero-Trust Security</text>
+  </g>
+</svg>

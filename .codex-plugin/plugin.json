@@ -1,6 +1,6 @@
 {
-  "name": "taxsarthi",
-  "description": "TaxSarthi - Deterministic Indian Income Tax Return (ITR) Assistant for OpenAI Codex",
+  "name": "taxpilot",
+  "description": "TaxPilot - Deterministic Indian Income Tax Return (ITR) Assistant for OpenAI Codex",
   "version": "1.0.0",
   "skills": ["skills/taxsarthi"]
 }

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="taxsarthi-subtle-w" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e9985"/>
+      <stop offset="100%" stop-color="#347363"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10, 10)">
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="url(#taxsarthi-subtle-w)" />
+    <path d="M30 14 L44 21 C44 34 30 44 30 48 C30 44 16 34 16 21 Z" fill="rgba(255,255,255,0.12)" stroke="#FFFFFF" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M24 24 H36 M24 29 H34 M24 24 V36 C27 36 32 35 32 31 C32 27 27 27 24 27 M28 35 L36 45" 
+          stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="36" cy="21" r="2.8" fill="#d29922"/>
+  </g>
+
+  <g transform="translate(84, 46)">
+    <text font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-weight="700" font-size="30" letter-spacing="-0.03em" fill="#e6edf3">
+      Tax<tspan fill="#56b39d">Sarthi</tspan>
+    </text>
+    <text x="155" y="-12" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#8b949e" letter-spacing="0.04em">
+      AY 2026-27
+    </text>
+    <text x="2" y="15" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="11.5" font-weight="500" fill="#8b949e" letter-spacing="0.01em">
+      Deterministic Indian Tax Engine
+    </text>
+  </g>
+</svg>

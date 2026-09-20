@@ -1,4 +1,5 @@
 # Never commit anyone's tax documents or generated filings
+taxpilot-workspace/
 taxsarthi-workspace/
 itr-wala-workspace/
 *AIS*
@@ -43,3 +44,10 @@ automation/workspace/*
 .vscode/
 .idea/
 *.swp
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts

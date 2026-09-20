@@ -17,7 +17,7 @@ import zipfile
 from pathlib import Path
 
 if sys.version_info < (3, 9):
-    sys.exit("itr-wala needs Python 3.9 or newer (found %d.%d)."
+    sys.exit("TaxPilot needs Python 3.9 or newer (found %d.%d)."
              % sys.version_info[:2])
 
 

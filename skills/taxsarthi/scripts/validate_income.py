@@ -23,7 +23,7 @@ import sys
 from datetime import date
 
 if sys.version_info < (3, 9):
-    sys.exit("itr-wala needs Python 3.9 or newer (found %d.%d)." % sys.version_info[:2])
+    sys.exit("TaxPilot needs Python 3.9 or newer (found %d.%d)." % sys.version_info[:2])
 
 PAN_RE = re.compile(r"\b[A-Z]{5}[0-9]{4}[A-Z]\b")
 AADHAAR_RE = re.compile(r"\b\d{12}\b")
