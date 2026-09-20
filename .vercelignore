@@ -1,0 +1,13 @@
+# Ignore Python packaging and CLI files that trigger Vercel Python runtime detection
+setup.py
+taxsarthi/
+skills/
+automation/
+legacy-static/
+tests/
+*.py
+*.egg-info
+.claude-plugin/
+.codex-plugin/
+.agents/
+docs/
