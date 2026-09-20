@@ -2,7 +2,7 @@
 
 > **Official Engineering & Product Documentation for AY 2026-27 (FY 2025-26)**  
 > *Deterministic Indian Income Tax Engine & AI Filing Co-Pilot*  
-> *Maintained & Owned by Kishan Ojha (`Kishann911/TaxSarthi-`)*
+> *Maintained & Owned by Kishan Ojha (`Kishann911/TaxPilot`)*
 
 ---
 

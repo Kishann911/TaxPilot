@@ -2,7 +2,7 @@
 
 > **High-Impact Additions to Elevate TaxPilot to an Enterprise-Grade Tax Platform**  
 > *Assessment Year 2026-27 (Financial Year 2025-26)*  
-> *Maintained & Owned by Kishan Ojha (`Kishann911/TaxSarthi-`)*
+> *Maintained & Owned by Kishan Ojha (`Kishann911/TaxPilot`)*
 
 ---
 

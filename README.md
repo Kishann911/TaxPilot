@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Kishann911/TaxSarthi-/actions/workflows/tests.yml"><img src="https://github.com/Kishann911/TaxSarthi-/actions/workflows/tests.yml/badge.svg" alt="TaxPilot CI"></a>
+  <a href="https://github.com/Kishann911/TaxPilot/actions/workflows/tests.yml"><img src="https://github.com/Kishann911/TaxPilot/actions/workflows/tests.yml/badge.svg" alt="TaxPilot CI"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="https://github.com/Kishann911/TaxSarthi-"><img src="https://img.shields.io/badge/Next.js_16-Serverless_Edition-blueviolet" alt="Next.js 16"></a>
+  <a href="https://github.com/Kishann911/TaxPilot"><img src="https://img.shields.io/badge/Next.js_16-Serverless_Edition-blueviolet" alt="Next.js 16"></a>
   <a href="#test-receipts--invariants"><img src="https://img.shields.io/badge/Golden_Tests-51_Passed-teal" alt="Golden Tests"></a>
   <a href="#test-receipts--invariants"><img src="https://img.shields.io/badge/Fuzzer-350k%2B_Cycles-success" alt="Fuzzer"></a>
 </p>
@@ -102,8 +102,8 @@ graph TD
 Run the live interactive tax studio locally:
 ```bash
 # Clone the repository
-git clone https://github.com/Kishann911/TaxSarthi-.git
-cd TaxSarthi-
+git clone https://github.com/Kishann911/TaxPilot.git
+cd TaxPilot
 
 # Install dependencies & run development server
 npm install
@@ -253,7 +253,7 @@ automation/
 
 This project is licensed under the **MIT License**.
 
-- **Project Lead & Owner:** Copyright © 2026 **Kishan Ojha** (`Kishann911/TaxSarthi-`).
+- **Project Lead & Owner:** Copyright © 2026 **Kishan Ojha** (`Kishann911/TaxPilot`).
 - **TaxPilot Contributors:** Enhancements, Serverless Next.js 16 Web Studio, TypeScript parity engine, and Edge APIs.
 - **Original Foundation:** Mathematical core engine foundation and initial repository structure copyright © 2026 **Karan Bansal** (`karanb192/itr-wala`).
 - **Reference Material:** Portal schedule notes and AIS SFT classifications adapted from the MIT-licensed `file-itr` project (`shivprime94/file-itr`).

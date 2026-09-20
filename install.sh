@@ -23,7 +23,7 @@
 
 set -euo pipefail
 
-DEFAULT_REPO="https://github.com/Kishann911/TaxSarthi-.git"
+DEFAULT_REPO="https://github.com/Kishann911/TaxPilot.git"
 
 REPO="${TAXSARTHI_REPO:-$DEFAULT_REPO}"
 REF="${TAXSARTHI_REF:-}"

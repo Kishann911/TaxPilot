@@ -6,7 +6,7 @@ services:
     container_name: taxpilot-automation
     environment:
       - GITHUB_TOKEN=${GITHUB_TOKEN:-}
-      - TARGET_REPO=${TARGET_REPO:-https://github.com/Kishann911/TaxSarthi-.git}
+      - TARGET_REPO=${TARGET_REPO:-https://github.com/Kishann911/TaxPilot.git}
       - TARGET_BRANCH=${TARGET_BRANCH:-main}
       - GIT_USER_NAME=${GIT_USER_NAME:-Kishan Ojha (TaxPilot Automation)}
       - GIT_USER_EMAIL=${GIT_USER_EMAIL:-kishanojha462@gmail.com}

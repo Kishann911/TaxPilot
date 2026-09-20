@@ -2,7 +2,7 @@
 
 > **Next-Generation Visual Design System & User Experience Architecture**  
 > *Target Aesthetic: Modern Dark Fintech (Linear / Stripe / Zerodha Console Grade)*  
-> *Designed & Maintained by Kishan Ojha (`Kishann911/TaxSarthi-`)*
+> *Designed & Maintained by Kishan Ojha (`Kishann911/TaxPilot`)*
 
 ---
 

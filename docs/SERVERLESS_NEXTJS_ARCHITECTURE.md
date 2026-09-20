@@ -2,7 +2,7 @@
 
 > **Enterprise-Grade, 100% Serverless Web Application Architecture**  
 > *Framework: Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4*  
-> *Maintained & Owned by Kishan Ojha (`Kishann911/TaxSarthi-`)*
+> *Maintained & Owned by Kishan Ojha (`Kishann911/TaxPilot`)*
 
 ---
 

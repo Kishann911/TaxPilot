@@ -66,7 +66,7 @@ export default function HomePage() {
   const [copied, setCopied] = useState(false);
   const copyCommand = () => {
     if (typeof navigator !== "undefined") {
-      navigator.clipboard.writeText("git clone https://github.com/Kishann911/TaxSarthi-.git && ./install.sh");
+      navigator.clipboard.writeText("git clone https://github.com/Kishann911/TaxPilot.git && ./install.sh");
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
@@ -353,7 +353,7 @@ export default function HomePage() {
               {isDark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <a
-              href="https://github.com/Kishann911/TaxSarthi-"
+              href="https://github.com/Kishann911/TaxPilot"
               target="_blank"
               rel="noreferrer"
               className="hidden sm:inline-flex text-xs font-mono px-3 py-2 rounded-md bg-secondary hover:bg-secondary/80 text-secondary-foreground border border-border transition-all interactive-button"

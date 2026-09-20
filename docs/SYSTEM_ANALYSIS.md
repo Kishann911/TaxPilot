@@ -2,7 +2,7 @@
 
 > **TaxPilot Comprehensive Codebase & Statutory Engine Review**  
 > *Assessment Year 2026-27 (Financial Year 2025-26)*  
-> *Maintained by Kishan Ojha (`Kishann911/TaxSarthi-`)*
+> *Maintained by Kishan Ojha (`Kishann911/TaxPilot`)*
 
 ---
 

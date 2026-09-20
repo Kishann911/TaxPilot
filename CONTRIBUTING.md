@@ -10,7 +10,7 @@ Thanks for wanting to make Indian tax filing transparent, accessible, and mathem
 2. **Every statutory rule change ships with tests.** If a PR updates tax calculations, add test assertions to both `tests/runEngineTests.ts` and `skills/taxsarthi/scripts/test_tax_engine.py` with the hand-derived statutory result, citing the relevant section of the Income-tax Act, 1961.
 3. **The LLM never performs arithmetic.** All computation logic remains strictly encapsulated in deterministic engine code.
 4. **No real PII or tax data anywhere.** Never include actual PAN, Aadhaar numbers, real names, or live bank details in fixtures, issues, or PRs. The input validator rejects PAN/Aadhaar formats by design.
-5. **The installer remains self-referential.** `DEFAULT_REPO` in `install.sh` points to the canonical repository (`https://github.com/Kishann911/TaxSarthi-.git`).
+5. **The installer remains self-referential.** `DEFAULT_REPO` in `install.sh` points to the canonical repository (`https://github.com/Kishann911/TaxPilot.git`).
 
 ---
 

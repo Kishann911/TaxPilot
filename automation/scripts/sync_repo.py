@@ -70,7 +70,7 @@ def main():
     log("Starting TaxPilot Repository Sync Automation...")
 
     # Load and validate environment
-    target_repo = os.environ.get("TARGET_REPO", "https://github.com/Kishann911/TaxSarthi-.git")
+    target_repo = os.environ.get("TARGET_REPO", "https://github.com/Kishann911/TaxPilot.git")
     target_branch = os.environ.get("TARGET_BRANCH", "main")
     token = os.environ.get("GITHUB_TOKEN", "")
     user_name = os.environ.get("GIT_USER_NAME", "Kishan Ojha (TaxPilot Automation)")
